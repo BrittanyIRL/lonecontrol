@@ -41,9 +41,16 @@ const Main = styled.main`
   grid-area: main;
   min-height: 90vh;
   padding: 0 2rem 0 3rem;
-
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: auto;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  width: 100%;
   @media (max-width: 600px) {
     padding: 0 3rem;
+    margin-top: 0;
     display: ${({ hideWhileNavExposed }) =>
       hideWhileNavExposed ? "none" : "block"};
   }
@@ -55,12 +62,16 @@ const Footer = styled.footer`
   padding: 0 0 1rem 3rem;
   bottom: 0;
   position: absolute;
-  max-height: 6rem;
+  height: 5rem;
+  width: 15rem;
   @media (max-width: 600px) {
-    display: ${({ hideWhileNavExposed }) =>
-      hideWhileNavExposed ? "none" : "block"};
+    display: none;
   }
 `
+
+// margin-top: 3rem;
+// display: ${({ hideWhileNavExposed }) =>
+//   hideWhileNavExposed ? "none" : "block"};
 
 const today = new Date()
 const Layout = ({ children }) => {

@@ -10,10 +10,12 @@ const NavigationContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 0 2rem 0 3rem;
+  position: absolute;
   @media (max-width: 600px) {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0 3rem;
+    position: inherit;
   }
 `
 
@@ -103,9 +105,13 @@ const StyledLink = styled(Link)`
   }
   &.active {
     color: ${({ theme }) => theme.colors.FELDGRAU};
+    font-weight: 600;
     &:hover {
       text-decoration: none;
       cursor: default;
+    }
+    &:after {
+      content: "--";
     }
   }
 `
@@ -136,6 +142,9 @@ const Navigation = ({ showNav, onClickToggleNav }) => {
           </StyledLink>
           <StyledLink activeClassName="active" to="/watch/">
             Watch
+          </StyledLink>
+          <StyledLink activeClassName="active" to="/lyrics/">
+            Lyrics
           </StyledLink>
         </SiteNavigation>
         <SocialNavigation>
