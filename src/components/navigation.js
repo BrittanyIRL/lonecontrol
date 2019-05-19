@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components/macro"
@@ -56,6 +56,7 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 `
 const SiteHeaderLink = styled(Link)`
@@ -109,8 +110,7 @@ const StyledLink = styled(Link)`
   }
 `
 
-const Navigation = () => {
-  const [showNav, toggleShowNav] = useState(false)
+const Navigation = ({ showNav, onClickToggleNav }) => {
   console.log("nav??? ", showNav)
   return (
     <NavigationContainer>
@@ -118,7 +118,7 @@ const Navigation = () => {
         <h1>
           <SiteHeaderLink>Lone Control</SiteHeaderLink>
         </h1>
-        <NavMenuButton onClick={() => toggleShowNav(!showNav)} />
+        <NavMenuButton onClick={() => onClickToggleNav(!showNav)} />
       </HeaderContainer>
       <LinksContainer showForMobile={showNav}>
         <SiteNavigation>
@@ -157,4 +157,8 @@ const Navigation = () => {
   )
 }
 
+Navigation.propTypes = {
+  showNav: PropTypes.bool.isRequired,
+  onClickToggleNav: PropTypes.func.isRequired,
+}
 export default Navigation

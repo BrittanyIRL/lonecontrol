@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components/macro"
@@ -19,7 +19,7 @@ const Body = styled.body`
   grid-template-areas:
     "navigation main"
     "footer footer";
-  height: 100%;
+  height: 100vh;
 
   @media (max-width: 600px) {
     grid-template-columns: 100%;
@@ -27,6 +27,9 @@ const Body = styled.body`
       "navigation"
       "main"
       "footer";
+    overflow: ${({ hideWhileNavExposed }) =>
+      hideWhileNavExposed ? "hidden" : "scroll"};
+    height: 100vh;
   }
 `
 
@@ -37,6 +40,13 @@ const StyledNavigation = styled(Navigation)`
 const Main = styled.main`
   grid-area: main;
   min-height: 90vh;
+  padding: 0 2rem 0 3rem;
+
+  @media (max-width: 600px) {
+    padding: 0 3rem;
+    display: ${({ hideWhileNavExposed }) =>
+      hideWhileNavExposed ? "none" : "block"};
+  }
 `
 const Footer = styled.footer`
   grid-area: footer;
@@ -45,42 +55,52 @@ const Footer = styled.footer`
   padding: 0 0 1rem 3rem;
   bottom: 0;
   position: absolute;
+  max-height: 6rem;
+  @media (max-width: 600px) {
+    display: ${({ hideWhileNavExposed }) =>
+      hideWhileNavExposed ? "none" : "block"};
+  }
 `
 
 const today = new Date()
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+const Layout = ({ children }) => {
+  const [showNav, toggleShowNav] = useState(false)
+  return (
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
           }
         }
-      }
-    `}
-    render={data => (
-      <ThemeProvider theme={theme}>
-        <>
-          <GlobalStyle />
-          <Body>
-            <StyledNavigation />
-            <Main>{children}</Main>
+      `}
+      render={data => (
+        <ThemeProvider theme={theme}>
+          <>
+            <GlobalStyle />
+            <Body hideWhileNavExposed={showNav}>
+              <StyledNavigation
+                showNav={showNav}
+                onClickToggleNav={toggleShowNav}
+              />
+              <Main hideWhileNavExposed={showNav}>{children}</Main>
 
-            <Footer>
-              <p>
-                copyright and content belong to Lone Control,{" "}
-                {today.getFullYear()}.
-              </p>
-              <p>site maintained from the surface of Mars.</p>
-            </Footer>
-          </Body>
-        </>
-      </ThemeProvider>
-    )}
-  />
-)
-
+              <Footer hideWhileNavExposed={showNav}>
+                <p>
+                  copyright and content belong to Lone Control,{" "}
+                  {today.getFullYear()}.
+                </p>
+                <p>site maintained from the surface of Mars.</p>
+              </Footer>
+            </Body>
+          </>
+        </ThemeProvider>
+      )}
+    />
+  )
+}
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
