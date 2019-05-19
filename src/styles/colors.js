@@ -1,0 +1,7 @@
+export default {
+  EERIE_BLACK: "#1B1A18",
+  RAISIN_BLACK: "#252812",
+  FELDGRAU: "#495253",
+  MUMMYS_TOMB: "#8C8F84",
+  PLATINUM: "#E8E8E8",
+}
