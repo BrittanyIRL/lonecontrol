@@ -3,16 +3,14 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-const MainContent = styled.div``
-
-const MainHeading = styled.h2``
+import PageHeading from "../components/headings/page-heading"
 
 const Song = styled.div`
   margin-bottom: 2rem;
 `
+
+const SongTitle = styled.h3``
 const LyricSection = styled.p`
-  line-height: 1.2;
   margin-bottom: 1.5rem;
 `
 const LyricLine = styled.span`
@@ -21,10 +19,10 @@ const LyricLine = styled.span`
 const Lyrics = () => (
   <Layout>
     <SEO title="Lyrics" />
-    <MainContent>
-      <MainHeading>Lyrics</MainHeading>
+    <>
+      <PageHeading>Lyrics</PageHeading>
       <Song>
-        <h2>Unnecessary Voice</h2>
+        <SongTitle>Unnecessary Voice</SongTitle>
         <LyricSection>
           <LyricLine>I am not a necessary voice</LyricLine>
           <LyricLine>The future is not my choice</LyricLine>
@@ -44,7 +42,7 @@ const Lyrics = () => (
         </LyricSection>
       </Song>
       <Song>
-        <h2>My Life is My Fault</h2>
+        <SongTitle>My Life is My Fault</SongTitle>
         <LyricSection>
           <LyricLine>Don't call it a sickness</LyricLine>
           <LyricLine>Don't call it the blues</LyricLine>
@@ -73,7 +71,7 @@ const Lyrics = () => (
           <LyricLine>My life is my fault</LyricLine>
         </LyricSection>
       </Song>
-    </MainContent>
+    </>
   </Layout>
 )
 

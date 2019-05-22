@@ -1,7 +1,9 @@
 export default {
   family: {
-    primary: "Roboto",
-    backup: "sans-serif",
+    primary: "HKGrotesk",
+    bold: "HKGrotesk-Bold",
+    italic: "HKGrotesk-Italic",
+    backup: "Helvetica",
   },
   size: {
     xxs: "1rem",

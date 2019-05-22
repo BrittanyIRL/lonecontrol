@@ -5,12 +5,13 @@ import styled from "styled-components/macro"
 
 // break for smol views at 600px
 
-const NavigationContainer = styled.div`
+const NavigationContainer = styled.nav`
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0 2rem 0 3rem;
-  position: absolute;
+  position: fixed;
   @media (max-width: 600px) {
     flex-direction: row;
     flex-wrap: wrap;
@@ -60,11 +61,14 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 6rem;
+  padding-bottom: 2rem;
 `
 const SiteHeaderLink = styled(Link)`
   color: ${({ theme }) => theme.colors.RAISIN_BLACK};
   font-weight: 700;
   font-size: 3.4rem;
+  height: 4rem;
   &.active {
     color: ${({ theme }) => theme.colors.RAISIN_BLACK};
   }

@@ -3,13 +3,20 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PageHeading from "../components/headings/page-heading"
+import HorizontalLine from "../components/accents/horizontal-line"
 
+const SectionHeading = styled.h3`
+  &::last-of-type {
+    color: red;
+  }
+`
 const AboutSection = styled.div`
   width: 60rem;
   max-width: 60vw;
+  margin-bottom: 2rem;
   p {
-    line-height: 1.4;
-    padding-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
   @media (max-width: 600px) {
     max-width: 90vw;
@@ -19,8 +26,9 @@ const AboutSection = styled.div`
 const About = () => (
   <Layout>
     <SEO title="About" />
+    <PageHeading>About Lone Control</PageHeading>
     <AboutSection>
-      <h3>Ethereal version</h3>
+      <SectionHeading>Ethereal version</SectionHeading>
 
       <p>Lone Control is a blip. Shrill. Loud. And now.</p>
 
@@ -59,9 +67,9 @@ const About = () => (
         this. Here. There. Gone.
       </p>
     </AboutSection>
-
+    <HorizontalLine />
     <AboutSection>
-      <h3>Tangible version</h3>
+      <SectionHeading>Tangible version</SectionHeading>
 
       <p>Lone Control is a blip. Shrill. Loud. And now.</p>
 

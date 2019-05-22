@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "HKGrotesk";
+  src: url("../styles/fonts/HKGrotesk-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HKGrotesk-Bold";
+  src: url("../styles/fonts/HKGrotesk-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HKGrotesk-Light";
+  src: url("../styles/fonts/HKGrotesk-Light.woff") format("woff");
+}

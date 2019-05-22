@@ -13,14 +13,14 @@ import { GlobalStyle, theme } from "../styles"
 
 import Navigation from "./navigation"
 
-const Body = styled.body`
+const Body = styled.div`
   display: grid;
   grid-template-columns: 25% 75%;
   grid-template-areas:
     "navigation main"
     "footer footer";
   height: 100vh;
-
+  margin-top: 2rem;
   @media (max-width: 600px) {
     grid-template-columns: 100%;
     grid-template-areas:
@@ -39,14 +39,12 @@ const StyledNavigation = styled(Navigation)`
 `
 const Main = styled.main`
   grid-area: main;
-  min-height: 90vh;
+  min-height: 100vh;
   padding: 0 2rem 0 3rem;
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin: auto;
-  margin-bottom: 5rem;
-  margin-top: 5rem;
+  margin-top: 6.1rem;
   width: 100%;
   @media (max-width: 600px) {
     padding: 0 3rem;
@@ -57,13 +55,16 @@ const Main = styled.main`
 `
 const Footer = styled.footer`
   grid-area: footer;
-  font-size: 0.8rem;
   text-align: left;
-  padding: 0 0 1rem 3rem;
-  bottom: 0;
   position: absolute;
   height: 5rem;
-  width: 15rem;
+  width: 100%;
+  position: fixed;
+  bottom: 1rem;
+  left: 3rem;
+  & > p {
+    font-size: 0.8rem;
+  }
   @media (max-width: 600px) {
     display: none;
   }
