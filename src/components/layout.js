@@ -39,13 +39,15 @@ const StyledNavigation = styled(Navigation)`
 `
 const Main = styled.main`
   grid-area: main;
-  min-height: 100vh;
-  padding: 0 2rem 0 3rem;
+  height: calc(100vh - 6.1rem);
+  overflow-y: scroll;
+  padding: 0 3rem 0 3rem;
   display: flex;
   flex-direction: column;
   align-content: center;
   margin-top: 6.1rem;
   width: 100%;
+  max-width: 1100px;
   @media (max-width: 600px) {
     padding: 0 3rem;
     margin-top: 0;

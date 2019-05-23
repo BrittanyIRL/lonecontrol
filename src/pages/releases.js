@@ -2,13 +2,14 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PageHeading from "../components/headings/page-heading"
 
 const Releases = () => (
   <Layout>
     <SEO title="Releases" />
-    <div>
-      <h1>Releases container</h1>
-    </div>
+    <>
+      <PageHeading>Physical Releases</PageHeading>
+    </>
   </Layout>
 )
 

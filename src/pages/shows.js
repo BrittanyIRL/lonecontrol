@@ -2,13 +2,14 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PageHeading from "../components/headings/page-heading"
 
 const Shows = () => (
   <Layout>
     <SEO title="Tour" />
-    <div>
-      <h1>Shows container</h1>
-    </div>
+    <>
+      <PageHeading>Upcoming Shows</PageHeading>
+    </>
   </Layout>
 )
 

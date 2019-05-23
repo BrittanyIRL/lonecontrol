@@ -17,8 +17,12 @@ const NavigationContainer = styled.nav`
     flex-wrap: wrap;
     padding: 0 3rem;
     position: inherit;
+    height: ${({ showForMobile }) => (showForMobile ? "100%" : "5rem")};
   }
 `
+NavigationContainer.propTypes = {
+  showForMobile: PropTypes.bool,
+}
 
 const LinksContainer = styled.div`
   @media (max-width: 600px) {
@@ -121,9 +125,8 @@ const StyledLink = styled(Link)`
 `
 
 const Navigation = ({ showNav, onClickToggleNav }) => {
-  console.log("nav??? ", showNav)
   return (
-    <NavigationContainer>
+    <NavigationContainer showForMobile={showNav}>
       <HeaderContainer>
         <h1>
           <SiteHeaderLink>Lone Control</SiteHeaderLink>

@@ -4,6 +4,12 @@ import styled from "styled-components"
 
 const HeadingContainer = styled.div`
   padding-bottom: 2rem;
+  margin: 0 2rem;
+  & > img {
+    object-fit: cover;
+    height: 50rem;
+    width: 100%;
+  }
 `
 
 const PageHeadingImage = ({ children }) => (
