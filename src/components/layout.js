@@ -7,9 +7,9 @@
 
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-import styled, { ThemeProvider } from "styled-components/macro"
-import { GlobalStyle, theme } from "../styles"
+import styled from "styled-components/macro"
+
+import GlobalLayout from "./global-layout"
 
 import Navigation from "./navigation"
 
@@ -20,7 +20,6 @@ const Body = styled.div`
     "navigation main"
     "footer footer";
   height: 100vh;
-  margin-top: 2rem;
   @media (max-width: 600px) {
     grid-template-columns: 100%;
     grid-template-areas:
@@ -38,14 +37,15 @@ const StyledNavigation = styled(Navigation)`
   height: 100vh;
 `
 const Main = styled.main`
+  margin: 0;
   grid-area: main;
-  height: calc(100vh - 6.1rem);
+  height: 100vh;
+  max-height: 100vh;
   overflow-y: scroll;
-  padding: 0 3rem 0 3rem;
+  padding: 2rem 3rem 0 3rem;
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin-top: 6.1rem;
   width: 100%;
   max-width: 1100px;
   @media (max-width: 600px) {
@@ -79,40 +79,21 @@ const Footer = styled.footer`
 const today = new Date()
 const Layout = ({ children }) => {
   const [showNav, toggleShowNav] = useState(false)
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => (
-        <ThemeProvider theme={theme}>
-          <>
-            <GlobalStyle />
-            <Body hideWhileNavExposed={showNav}>
-              <StyledNavigation
-                showNav={showNav}
-                onClickToggleNav={toggleShowNav}
-              />
-              <Main hideWhileNavExposed={showNav}>{children}</Main>
 
-              <Footer hideWhileNavExposed={showNav}>
-                <p>
-                  copyright and content belong to Lone Control,{" "}
-                  {today.getFullYear()}.
-                </p>
-                <p>site maintained from the surface of Mars.</p>
-              </Footer>
-            </Body>
-          </>
-        </ThemeProvider>
-      )}
-    />
+  return (
+    <GlobalLayout>
+      <Body hideWhileNavExposed={showNav}>
+        <StyledNavigation showNav={showNav} onClickToggleNav={toggleShowNav} />
+        <Main hideWhileNavExposed={showNav}>{children}</Main>
+
+        <Footer hideWhileNavExposed={showNav}>
+          <p>
+            copyright and content belong to Lone Control, {today.getFullYear()}.
+          </p>
+          <p>site maintained from the surface of Mars.</p>
+        </Footer>
+      </Body>
+    </GlobalLayout>
   )
 }
 Layout.propTypes = {

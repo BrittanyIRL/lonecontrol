@@ -5,11 +5,19 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
 import HorizontalLine from "../components/accents/horizontal-line"
+import bandImage from "../images/temp-shot.jpg"
 
 const SectionHeading = styled.h3`
   &::last-of-type {
     color: red;
   }
+`
+
+const AboutImage = styled.img`
+  object-fit: cover;
+  align-self: flex-start;
+  margin-bottom: 2rem;
+  width: 60rem;
 `
 const AboutSection = styled.div`
   width: 60rem;
@@ -27,6 +35,10 @@ const About = () => (
   <Layout>
     <SEO title="About" />
     <PageHeading>About Lone Control</PageHeading>
+    <AboutImage
+      src={bandImage}
+      alt="Chris Trian and Gerrit Feenstra, the two members of Lone Control standing somewhere."
+    />
     <AboutSection>
       <SectionHeading>Ethereal version</SectionHeading>
 

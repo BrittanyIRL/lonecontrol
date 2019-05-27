@@ -10,7 +10,7 @@ const NavigationContainer = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 2rem 0 3rem;
+  padding: 2rem 2rem 0 3rem;
   position: fixed;
   @media (max-width: 600px) {
     flex-direction: row;
@@ -61,26 +61,30 @@ const SocialNavigation = styled.div`
 
 const HeaderContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 6rem;
   padding-bottom: 2rem;
-`
-const SiteHeaderLink = styled(Link)`
-  color: ${({ theme }) => theme.colors.RAISIN_BLACK};
-  font-weight: 700;
-  font-size: 3.4rem;
-  height: 4rem;
-  &.active {
-    color: ${({ theme }) => theme.colors.RAISIN_BLACK};
+  @media (min-width: 600px) {
+    display: none;
   }
+`
+// const SiteHeaderLink = styled(Link)`
+//   display: ${({ showForMobile }) => (showForMobile ? "inline-block" : "none")}
+//   color: ${({ theme }) => theme.colors.RAISIN_BLACK};
+//   font-weight: 700;
+//   font-size: 3.4rem;
+//   height: 4rem;
+//   &.active {
+//     color: ${({ theme }) => theme.colors.RAISIN_BLACK};
+//   }
 
-  @media (max-width: 600px) {
-    width: 100%;
-  }
-`
+//   @media (max-width: 600px) {
+//     width: 100%;
+//   }
+// `
 
 const NavMenuButton = styled.button`
   margin-top: 1rem;
@@ -128,27 +132,27 @@ const Navigation = ({ showNav, onClickToggleNav }) => {
   return (
     <NavigationContainer showForMobile={showNav}>
       <HeaderContainer>
-        <h1>
-          <SiteHeaderLink>Lone Control</SiteHeaderLink>
-        </h1>
         <NavMenuButton onClick={() => onClickToggleNav(!showNav)} />
       </HeaderContainer>
       <LinksContainer showForMobile={showNav}>
         <SiteNavigation>
+          <StyledLink activeClassName="active" to="/home/">
+            Home
+          </StyledLink>
           <StyledLink activeClassName="active" to="/about/">
             About
-          </StyledLink>
-          <StyledLink activeClassName="active" to="/releases/">
-            Releases
-          </StyledLink>
-          <StyledLink activeClassName="active" to="/shows/">
-            Shows
           </StyledLink>
           <StyledLink activeClassName="active" to="/listen/">
             Listen
           </StyledLink>
           <StyledLink activeClassName="active" to="/watch/">
             Watch
+          </StyledLink>
+          <StyledLink activeClassName="active" to="/shows/">
+            Shows
+          </StyledLink>
+          <StyledLink activeClassName="active" to="/releases/">
+            Releases
           </StyledLink>
           <StyledLink activeClassName="active" to="/lyrics/">
             Lyrics

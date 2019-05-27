@@ -5,7 +5,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
 
+const SongsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
 const Song = styled.div`
+  max-width: 50%;
+  min-width: 300px;
   margin-bottom: 2rem;
 `
 
@@ -19,8 +25,9 @@ const LyricLine = styled.span`
 const Lyrics = () => (
   <Layout>
     <SEO title="Lyrics" />
-    <>
-      <PageHeading>Lyrics</PageHeading>
+
+    <PageHeading>Song Lyrics</PageHeading>
+    <SongsContainer>
       <Song>
         <SongTitle>Unnecessary Voice</SongTitle>
         <LyricSection>
@@ -71,7 +78,7 @@ const Lyrics = () => (
           <LyricLine>My life is my fault</LyricLine>
         </LyricSection>
       </Song>
-    </>
+    </SongsContainer>
   </Layout>
 )
 
