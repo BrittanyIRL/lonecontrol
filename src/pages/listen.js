@@ -78,9 +78,9 @@ const SoundCloud = () => (
       </TrackContainer>
       <HorizontalLine />
       <StreamingContainer>
-        <StreamingOption>Spotify</StreamingOption>
-        <StreamingOption>Apple Music</StreamingOption>
         <StreamingOption>BandCamp</StreamingOption>
+        <StreamingOption>Apple Music</StreamingOption>
+        <StreamingOption>Spotify</StreamingOption>
       </StreamingContainer>
     </>
   </Layout>

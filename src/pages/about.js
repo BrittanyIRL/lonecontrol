@@ -1,6 +1,7 @@
 // import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
@@ -34,7 +35,7 @@ const AboutSection = styled.div`
 const About = () => (
   <Layout>
     <SEO title="About" />
-    <PageHeading>About Lone Control</PageHeading>
+    <PageHeading>About</PageHeading>
     <AboutImage
       src={bandImage}
       alt="Chris Trian and Gerrit Feenstra, the two members of Lone Control standing somewhere."

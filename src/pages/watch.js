@@ -25,7 +25,7 @@ const Video = () => (
   <Layout>
     <SEO title="Watch" />
     <>
-      <PageHeading>Music Videos</PageHeading>
+      <PageHeading>Watch</PageHeading>
 
       <VideoContainer>
         <h3>Video #1</h3>

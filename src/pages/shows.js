@@ -42,7 +42,7 @@ const Shows = () => (
       <p>Currently booking gigs for the Phoenix metro area.</p>
       <p>
         If you want to get in touch please{" "}
-        <a href="mailto:lonecontrol@gmail.com">email us</a>.
+        <a href="mailto:lonecontrolmusic@gmail.com">email us</a>.
       </p>
       <ImageBreak>
         <ImageBreakContent src={bandImage} />
