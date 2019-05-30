@@ -15,10 +15,13 @@ const SectionHeading = styled.h3`
 `
 
 const AboutImage = styled.img`
-  object-fit: cover;
+  object-fit: contain;
   align-self: flex-start;
   margin-bottom: 2rem;
-  width: 50rem;
+  max-width: 60rem;
+  @media (max-width: 600px) {
+    max-width: 90vw;
+  }
 `
 const AboutSection = styled.div`
   width: 60rem;
