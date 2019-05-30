@@ -5,22 +5,22 @@ import { Link } from "gatsby"
 
 import GlobalLayout from "../components/global-layout"
 import SEO from "../components/seo"
-import backgroundImage from "../images/lc_house_bw.jpg"
-import textImage from "../images/lc_ep_text.png"
+import SplashBackground from "../images/lc_house_bw.jpg"
+import LoneControlText from "../images/lc_ep_text.png"
 
 const SplashContainer = styled.div`
   width: 100vw;
   height: 100vh;
   position: absolute;
   display: block;
-  background-image: url(${backgroundImage});
+  background-image: url(${SplashBackground});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 `
 
 const SplashText = styled.a`
-  background-image: url(${textImage});
+  background-image: url(${LoneControlText});
   position: absolute;
   top: 0;
   right: 0;
