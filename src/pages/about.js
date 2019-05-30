@@ -18,7 +18,7 @@ const AboutImage = styled.img`
   object-fit: cover;
   align-self: flex-start;
   margin-bottom: 2rem;
-  width: 60rem;
+  width: 50rem;
 `
 const AboutSection = styled.div`
   width: 60rem;
