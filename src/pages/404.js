@@ -64,7 +64,7 @@ const NotFoundPage = () => (
         allowfullscreen
       />
       <StyledLink to="/home/">
-        Whoops! How'd you get here? <br /> Click here to return to site.
+        Woah! How'd you get here? <br /> Click here to return to site.
       </StyledLink>
     </Container>
   </GlobalLayout>

@@ -145,9 +145,9 @@ const Navigation = ({ showNav, onClickToggleNav }) => {
           <StyledLink activeClassName="active" to="/listen/">
             Listen
           </StyledLink>
-          <StyledLink activeClassName="active" to="/watch/">
+          {/* <StyledLink activeClassName="active" to="/watch/">
             Watch
-          </StyledLink>
+          </StyledLink> */}
           <StyledLink activeClassName="active" to="/shows/">
             Shows
           </StyledLink>
@@ -159,16 +159,25 @@ const Navigation = ({ showNav, onClickToggleNav }) => {
           </StyledLink>
         </SiteNavigation>
         <SocialNavigation>
-          <StyledLink activeClassName="active" to="#">
+          <StyledLink
+            to="https://www.bandcamp.com/lonecontrol/"
+            target="_blank"
+          >
             BandCamp
           </StyledLink>
-          <StyledLink activeClassName="active" to="#">
+          <StyledLink
+            to="https://www.soundcloud.com/lonecontrol/"
+            target="_blank"
+          >
             Soundcloud
           </StyledLink>
-          <StyledLink activeClassName="active" to="#">
+          <StyledLink
+            to="https://www.instagram.com/lonecontrol"
+            target="_blank"
+          >
             Instagram
           </StyledLink>
-          <StyledLink activeClassName="active" to="#">
+          <StyledLink to="https://www.twitter.com/lonecontrol" target="_blank">
             Twitter
           </StyledLink>
         </SocialNavigation>

@@ -72,15 +72,33 @@ const SoundCloud = () => (
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/590551725&color=%23495253&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
         />
-        <SoundCloudAnchor href="https://soundcloud.com">
+        <SoundCloudAnchor
+          href="https://soundcloud.com/lonecontrol"
+          target="_blank"
+        >
           More on SoundCloud
         </SoundCloudAnchor>
       </TrackContainer>
       <HorizontalLine />
       <StreamingContainer>
-        <StreamingOption>BandCamp</StreamingOption>
-        <StreamingOption>Apple Music</StreamingOption>
-        <StreamingOption>Spotify</StreamingOption>
+        <StreamingOption
+          href="https://bandcamp.com/lonecontroltemproute"
+          target="_blank"
+        >
+          BandCamp
+        </StreamingOption>
+        <StreamingOption
+          href="https://itunes.apple.com/us/artist/lonecontrol"
+          target="_blank"
+        >
+          Apple Music
+        </StreamingOption>
+        <StreamingOption
+          href="https://spotify.com/lonecontroltemproute"
+          target="_blank"
+        >
+          Spotify
+        </StreamingOption>
       </StreamingContainer>
     </>
   </Layout>

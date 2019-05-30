@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 // import PageHeading from "../components/headings/page-heading"
 
-import epFrontImage from "../images/lc_house_bw.png"
+import epFrontImage from "../images/lc_ep_front.jpg"
 const ReleasesContainer = styled.div`
   width: 60rem;
   max-width: 60vw;
@@ -22,7 +22,7 @@ const ReleasesContainer = styled.div`
   }
 `
 const AlbumImage = styled.img`
-  width; 40rem;
+  width: 40rem;
 `
 
 const Releases = () => (
@@ -39,8 +39,10 @@ const Releases = () => (
         alt="Self-Titled Album Cover for Lone Control"
       />
       <p>
-        Follow us on <a href="#">Instagram</a> or <a href="#">Twitter</a> to
-        stay in the know.
+        Follow us on{" "}
+        <a href="https://www.instagram.com/lonecontrol/">Instagram</a> or{" "}
+        <a href="https://twitter.com/lonecontrol">Twitter</a> to stay in the
+        know.
       </p>
     </ReleasesContainer>
   </Layout>

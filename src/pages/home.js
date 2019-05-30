@@ -81,7 +81,13 @@ const Home = () => (
     <HomeContainer>
       <IntroText>
         Lone Control debut single <br /> "Unnecessary Voice"{" "}
-        <HomeLink href="#">out now</HomeLink>.
+        <HomeLink
+          href="https://soundcloud.com/lonecontroltemproute"
+          target="_blank"
+        >
+          out now
+        </HomeLink>
+        .
       </IntroText>
       <HomeImage />
       <IntroText sub>
