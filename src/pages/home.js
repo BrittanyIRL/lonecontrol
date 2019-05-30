@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 
 import SEO from "../components/seo"
 
-import epFrontImageColor from "../images/lc_house_color.png"
+import epFrontImageColor from "../images/lc_house_color.jpg"
 
 const HomeContainer = styled.div`
   width: 100%;
