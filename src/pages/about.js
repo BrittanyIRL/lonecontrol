@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
 import HorizontalLine from "../components/accents/horizontal-line"
-import bandImage from "../images/temp-shot.jpg"
+import bandImage from "../images/pressshot2019.jpg"
 
 const SectionHeading = styled.h3`
   &::last-of-type {
