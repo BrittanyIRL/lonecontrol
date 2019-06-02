@@ -11,10 +11,7 @@ import LoneControlText from "../images/lc_ep_text.png"
 const SplashContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  min-height: 400px;
-  min-width: 200px;
   display: block;
-  background-color: red;
   position: absolute;
   background-image: url(${SplashBackground});
   background-position: center;
