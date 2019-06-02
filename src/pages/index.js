@@ -11,8 +11,11 @@ import LoneControlText from "../images/lc_ep_text.png"
 const SplashContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  min-height: 400px;
+  min-width: 200px;
   display: block;
+  background-color: red;
+  position: absolute;
   background-image: url(${SplashBackground});
   background-position: center;
   background-repeat: no-repeat;
@@ -79,15 +82,17 @@ const EnterSite = styled(Link)`
 const IndexPage = () => (
   <GlobalLayout>
     <SEO title="Lone Control" keywords={[`gatsby`, `application`, `react`]} />
-    <SplashContainer>
-      <SplashText
-        alt="Visit Bandcamp to hear the debut EP"
-        href="www.bandcamp.com/lonecontrol"
-        aria-description="Lone Control"
-        target="_blank"
-      />
-      <EnterSite to="/home/">Enter Site</EnterSite>
-    </SplashContainer>
+    <body>
+      <SplashContainer>
+        <SplashText
+          alt="Visit Bandcamp to hear the debut EP"
+          href="www.bandcamp.com/lonecontrol"
+          aria-description="Lone Control"
+          target="_blank"
+        />
+        <EnterSite to="/home/">Enter Site</EnterSite>
+      </SplashContainer>
+    </body>
   </GlobalLayout>
 )
 
