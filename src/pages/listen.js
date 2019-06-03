@@ -1,6 +1,8 @@
 // import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HorizontalLine from "../components/accents/horizontal-line"
@@ -12,7 +14,7 @@ const TrackContainer = styled.div`
   margin-bottom: 2rem;
 `
 
-const SoundCloudAnchor = styled.a`
+const SoundCloudAnchor = styled(OutboundLink)`
   background-color: ${({ theme }) => theme.colors.MUMMYS_TOMB};
   color: ${({ theme }) => theme.colors.PLATINUM};
   border-radius: 1px;
@@ -31,7 +33,7 @@ const StreamingContainer = styled.div`
   justify-content: center;
 `
 
-const StreamingOption = styled.a`
+const StreamingOption = styled(OutboundLink)`
   display: block;
   background-color: ${({ theme }) => theme.colors.MUMMYS_TOMB};
   max-width: 33%;

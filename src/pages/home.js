@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import Layout from "../components/layout"
 
@@ -60,7 +61,7 @@ const IntroText = styled.p`
   }
 `
 
-const HomeLink = styled.a`
+const HomeLink = styled(OutboundLink)`
   font-size: 3rem;
   border-bottom: 0.15rem solid ${({ theme }) => theme.colors.RAISIN_BLACK};
   color: ${({ theme }) => theme.colors.RAISIN_BLACK};

@@ -2,6 +2,7 @@ import React from "react"
 
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import GlobalLayout from "../components/global-layout"
 import SEO from "../components/seo"
@@ -19,7 +20,7 @@ const SplashContainer = styled.div`
   background-size: cover;
 `
 
-const SplashText = styled.a`
+const SplashText = styled(OutboundLink)`
   background-image: url(${LoneControlText});
   position: absolute;
   top: 0;
