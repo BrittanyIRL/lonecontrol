@@ -77,7 +77,19 @@ const HomeLink = styled.a`
 `
 const Home = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO
+      title="Home"
+      keywords={[
+        `phoenix`,
+        `punk`,
+        `music`,
+        `chris trian`,
+        `gerrit feenstra`,
+        `desert drip`,
+        `new music`,
+        `unnecessary voice`,
+      ]}
+    />
     <HomeContainer>
       <IntroText>
         Lone Control debut single <br /> "Unnecessary Voice"{" "}

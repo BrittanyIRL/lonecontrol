@@ -78,7 +78,19 @@ const EnterSite = styled(Link)`
 
 const IndexPage = () => (
   <GlobalLayout>
-    <SEO title="Lone Control" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO
+      title="Lone Control"
+      keywords={[
+        `phoenix`,
+        `punk`,
+        `music`,
+        `chris trian`,
+        `gerrit feenstra`,
+        `desert drip`,
+        `new music`,
+        `unnecessary voice`,
+      ]}
+    />
     <body>
       <SplashContainer>
         <SplashText

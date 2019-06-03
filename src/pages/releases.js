@@ -27,7 +27,19 @@ const AlbumImage = styled.img`
 
 const Releases = () => (
   <Layout>
-    <SEO title="Releases" />
+    <SEO
+      title="Releases"
+      keywords={[
+        `phoenix`,
+        `punk`,
+        `music`,
+        `chris trian`,
+        `gerrit feenstra`,
+        `desert drip`,
+        `new music`,
+        `unnecessary voice`,
+      ]}
+    />
     {/* <PageHeading>Physical Releases</PageHeading> */}
     <ReleasesContainer>
       <h3>Lone Control s/t EP coming soon on Desert Drip Records.</h3>

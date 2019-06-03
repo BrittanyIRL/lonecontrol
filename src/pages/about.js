@@ -37,11 +37,23 @@ const AboutSection = styled.div`
 
 const About = () => (
   <Layout>
-    <SEO title="About" />
+    <SEO
+      title="About"
+      keywords={[
+        `phoenix`,
+        `punk`,
+        `music`,
+        `chris trian`,
+        `gerrit feenstra`,
+        `desert drip`,
+        `new music`,
+        `unnecessary voice`,
+      ]}
+    />
     <PageHeading>About</PageHeading>
     <AboutImage
       src={bandImage}
-      alt="Chris Trian and Gerrit Feenstra, the two members of Lone Control standing somewhere."
+      alt="Gerrit Feenstra and Chris Trian, the two members of Lone Control."
     />
     <AboutSection>
       <SectionHeading>Ethereal version</SectionHeading>

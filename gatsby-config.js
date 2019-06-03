@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Lone Control`,
-    description: `Phoenix based punks`,
+    description: `Lone Control’s debut is a flash in the pan, arresting, burning bright while waning focus may last. Four hints at a larger question, too large to answer now. That moment will come in time. For now, there is only this. Here. There. Gone.`,
     author: `@brittanyIRL`,
+    owners: "Lone Control",
   },
   plugins: [
     {
@@ -13,12 +14,12 @@ module.exports = {
         version: "1.0",
 
         icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
+          android: false,
+          appleIcon: false,
+          appleStartup: false,
           coast: false,
           favicons: true,
-          firefox: true,
+          firefox: false,
           yandex: false,
           windows: false,
         },

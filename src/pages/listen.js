@@ -50,7 +50,19 @@ const StreamingOption = styled.a`
 
 const Listen = () => (
   <Layout>
-    <SEO title="Listen" />
+    <SEO
+      title="Listen"
+      keywords={[
+        `phoenix`,
+        `punk`,
+        `music`,
+        `chris trian`,
+        `gerrit feenstra`,
+        `desert drip`,
+        `new music`,
+        `unnecessary voice`,
+      ]}
+    />
     <>
       <PageHeading>Listen</PageHeading>
       <TrackContainer>

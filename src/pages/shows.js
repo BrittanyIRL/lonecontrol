@@ -25,7 +25,19 @@ const Container = styled.div`
 
 const Shows = () => (
   <Layout>
-    <SEO title="Tour" />
+    <SEO
+      title="Tour"
+      keywords={[
+        `phoenix`,
+        `punk`,
+        `music`,
+        `chris trian`,
+        `gerrit feenstra`,
+        `desert drip`,
+        `new music`,
+        `unnecessary voice`,
+      ]}
+    />
     <PageHeading>Upcoming Shows</PageHeading>
     <Container>
       <p>Currently booking gigs for the Phoenix metro area.</p>

@@ -24,7 +24,19 @@ const LyricLine = styled.span`
 `
 const Lyrics = () => (
   <Layout>
-    <SEO title="Lyrics" />
+    <SEO
+      title="Lyrics"
+      keywords={[
+        `phoenix`,
+        `punk`,
+        `music`,
+        `chris trian`,
+        `gerrit feenstra`,
+        `desert drip`,
+        `new music`,
+        `unnecessary voice`,
+      ]}
+    />
 
     <PageHeading>Song Lyrics</PageHeading>
     <SongsContainer>

@@ -23,7 +23,19 @@ const VideoContainer = styled.div`
 
 const Video = () => (
   <Layout>
-    <SEO title="Watch" />
+    <SEO
+      title="Watch"
+      keywords={[
+        `phoenix`,
+        `punk`,
+        `music`,
+        `chris trian`,
+        `gerrit feenstra`,
+        `desert drip`,
+        `new music`,
+        `unnecessary voice`,
+      ]}
+    />
     <>
       <PageHeading>Watch</PageHeading>
 
