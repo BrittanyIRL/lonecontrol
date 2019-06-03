@@ -83,11 +83,16 @@ const Home = () => (
         `phoenix`,
         `punk`,
         `music`,
-        `chris trian`,
-        `gerrit feenstra`,
+        `chris`,
+        `gerrit`,
         `desert drip`,
         `new music`,
         `unnecessary voice`,
+        `lone control`,
+        `loan control`,
+        `arizona`,
+        `rock`,
+        `indie`,
       ]}
     />
     <HomeContainer>
