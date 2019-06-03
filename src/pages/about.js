@@ -18,9 +18,12 @@ const AccordionButton = styled.button`
   align-self: center;
   max-width: 50%;
   text-align: center;
+  display: flex;
+  align-items: center;
 
   h3 {
     opacity: ${({ isExpanded }) => (!isExpanded ? "1.0" : "0.75")};
+    padding: 0;
   }
   &:hover {
     font-style: italic;
@@ -35,6 +38,8 @@ const AboutImage = styled.img`
   margin-bottom: 2rem;
   max-width: 60rem;
   max-width: 70vw;
+  height: 600px;
+  max-height: 60vh;
   @media (max-width: 600px) {
     max-width: 90vw;
   }
@@ -59,6 +64,9 @@ const AccordionControls = styled.div`
   max-width: 70vw;
   @media (max-width: 600px) {
     max-width: 90vw;
+    h3 {
+      font-size: 1.5rem;
+    }
   }
 `
 const AboutSection = styled.div`
