@@ -99,12 +99,11 @@ const About = () => (
       </p>
 
       <p>
-        Chris and Gerrit met at a downtown Phoenix bar over the discussion of an
-        At The Drive-In t-shirt. The former, from an El Paso punk background,
-        fresh to the city. The latter, a return resident, after years apart
-        making electronic music in Seattle. The two hit it off immediately,
-        finding common ground in Nine Inch Nails, Brainiac, and the early works
-        of Steve Albini.
+        Chris and Gerrit met at a downtown Phoenix bar. The former, from an El
+        Paso punk background, fresh to the city. The latter, a return resident,
+        after years apart making electronic music in Seattle. The two hit it off
+        immediately, finding common ground in Nine Inch Nails, Brainiac, and the
+        early works of Steve Albini.
       </p>
 
       <p>

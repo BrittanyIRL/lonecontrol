@@ -48,7 +48,7 @@ const Lyrics = () => (
           <LyricLine>Listen to my silence</LyricLine>
         </LyricSection>
       </Song>
-      <Song>
+      {/* <Song>
         <SongTitle>My Life is My Fault</SongTitle>
         <LyricSection>
           <LyricLine>Don't call it a sickness</LyricLine>
@@ -77,17 +77,9 @@ const Lyrics = () => (
         <LyricSection>
           <LyricLine>My life is my fault</LyricLine>
         </LyricSection>
-      </Song>
+      </Song> */}
     </SongsContainer>
   </Layout>
 )
-
-// SoundCloud.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// SoundCloud.defaultProps = {
-//   siteTitle: ``,
-// }
 
 export default Lyrics

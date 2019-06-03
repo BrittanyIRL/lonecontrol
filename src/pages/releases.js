@@ -30,30 +30,18 @@ const Releases = () => (
     <SEO title="Releases" />
     {/* <PageHeading>Physical Releases</PageHeading> */}
     <ReleasesContainer>
-      <h3>
-        Debut Lone Control self-titled EP coming summer of 2019 on Desert Drip
-        Records.
-      </h3>
+      <h3>Lone Control s/t EP coming soon on Desert Drip Records.</h3>
       <AlbumImage
         src={epFrontImage}
         alt="Self-Titled Album Cover for Lone Control"
       />
       <p>
         Follow us on{" "}
-        <a href="https://www.instagram.com/lonecontrol/">Instagram</a> or{" "}
-        <a href="https://twitter.com/lonecontrol">Twitter</a> to stay in the
-        know.
+        <a href="https://www.instagram.com/lonecontrol/">Instagram</a> to stay
+        in the know.
       </p>
     </ReleasesContainer>
   </Layout>
 )
-
-// SoundCloud.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// SoundCloud.defaultProps = {
-//   siteTitle: ``,
-// }
 
 export default Releases

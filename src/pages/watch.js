@@ -45,12 +45,4 @@ const Video = () => (
   </Layout>
 )
 
-// SoundCloud.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// SoundCloud.defaultProps = {
-//   siteTitle: ``,
-// }
-
 export default Video

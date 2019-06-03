@@ -128,6 +128,27 @@ const StyledLink = styled(Link)`
   }
 `
 
+const StyledLinkOutside = styled.a`
+  color: ${({ theme }) => theme.colors.RAISIN_BLACK};
+  width: 100%;
+  line-height: 1.4;
+  padding: 0.1rem 0;
+  &:hover {
+    text-decoration: line-through;
+  }
+  &.active {
+    color: ${({ theme }) => theme.colors.FELDGRAU};
+    font-weight: 600;
+    &:hover {
+      text-decoration: none;
+      cursor: default;
+    }
+    &:after {
+      content: "--";
+    }
+  }
+`
+
 const Navigation = ({ showNav, onClickToggleNav }) => {
   return (
     <NavigationContainer showForMobile={showNav}>
@@ -159,27 +180,24 @@ const Navigation = ({ showNav, onClickToggleNav }) => {
           </StyledLink>
         </SiteNavigation>
         <SocialNavigation>
-          <StyledLink
-            to="https://www.bandcamp.com/lonecontrol/"
+          <StyledLinkOutside
+            href="https://desertdriprecords.bandcamp.com/"
             target="_blank"
           >
             BandCamp
-          </StyledLink>
-          <StyledLink
-            to="https://www.soundcloud.com/lonecontrol/"
+          </StyledLinkOutside>
+          <StyledLinkOutside
+            href="https://soundcloud.com/lonecontrol"
             target="_blank"
           >
             Soundcloud
-          </StyledLink>
-          <StyledLink
-            to="https://www.instagram.com/lonecontrol"
+          </StyledLinkOutside>
+          <StyledLinkOutside
+            href="https://www.instagram.com/lonecontrol/"
             target="_blank"
           >
             Instagram
-          </StyledLink>
-          <StyledLink to="https://www.twitter.com/lonecontrol" target="_blank">
-            Twitter
-          </StyledLink>
+          </StyledLinkOutside>
         </SocialNavigation>
       </LinksContainer>
     </NavigationContainer>

@@ -23,17 +23,6 @@ const Container = styled.div`
   }
 `
 
-const ImageBreak = styled.div`
-  display: flex;
-  flex-direction: row;
-`
-
-const ImageBreakContent = styled.img`
-  width: 25%;
-  min-width: 200px;
-  height: 200px;
-  margin: 0 2rem 0 0;
-`
 const Shows = () => (
   <Layout>
     <SEO title="Tour" />
@@ -44,20 +33,8 @@ const Shows = () => (
         If you want to get in touch please{" "}
         <a href="mailto:lonecontrolmusic@gmail.com">email us</a>.
       </p>
-      <ImageBreak>
-        <ImageBreakContent src={bandImage} />
-        <ImageBreakContent src={bandImage} />
-      </ImageBreak>
     </Container>
   </Layout>
 )
-
-// SoundCloud.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// SoundCloud.defaultProps = {
-//   siteTitle: ``,
-// }
 
 export default Shows

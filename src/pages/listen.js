@@ -45,33 +45,24 @@ const StreamingOption = styled.a`
   color: ${({ theme }) => theme.colors.PLATINUM};
   font-size: 2rem;
   font-weight: 600;
+  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
 `
 
-const SoundCloud = () => (
+const Listen = () => (
   <Layout>
     <SEO title="Listen" />
     <>
       <PageHeading>Listen</PageHeading>
       <TrackContainer>
         <h3>Unnecessary Voice</h3>
-        <iframe
+        {/* <iframe
           width="100%"
           height="166"
           scrolling="no"
           frameborder="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/590551725&color=%23495253&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-        />
-        <br />
-        <h3>Imaginary Fiend</h3>
-        <iframe
-          width="100%"
-          height="166"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/590551725&color=%23495253&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-        />
+        /> */}
         <SoundCloudAnchor
           href="https://soundcloud.com/lonecontrol"
           target="_blank"
@@ -82,34 +73,28 @@ const SoundCloud = () => (
       <HorizontalLine />
       <StreamingContainer>
         <StreamingOption
-          href="https://bandcamp.com/lonecontroltemproute"
+          href="https://desertdriprecords.bandcamp.com/"
           target="_blank"
         >
           BandCamp
         </StreamingOption>
         <StreamingOption
-          href="https://itunes.apple.com/us/artist/lonecontrol"
-          target="_blank"
+          disabled
+          // href="https://itunes.apple.com/us/artist/lonecontrol"
+          // target="_blank"
         >
-          Apple Music
+          Coming Soon {/* Apple Music */}
         </StreamingOption>
         <StreamingOption
-          href="https://spotify.com/lonecontroltemproute"
-          target="_blank"
+          disabled
+          // href="https://spotify.com/lonecontroltemproute"
+          // target="_blank"
         >
-          Spotify
+          Coming Soon {/* Spotify */}
         </StreamingOption>
       </StreamingContainer>
     </>
   </Layout>
 )
 
-// SoundCloud.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// SoundCloud.defaultProps = {
-//   siteTitle: ``,
-// }
-
-export default SoundCloud
+export default Listen
