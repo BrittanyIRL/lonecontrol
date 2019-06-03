@@ -94,6 +94,7 @@ const IndexPage = () => (
         `arizona`,
         `rock`,
         `indie`,
+        `band`,
       ]}
     />
     <body>

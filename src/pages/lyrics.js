@@ -40,6 +40,7 @@ const Lyrics = () => (
         `arizona`,
         `rock`,
         `indie`,
+        `band`,
       ]}
     />
 

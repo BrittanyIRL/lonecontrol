@@ -41,6 +41,7 @@ const Shows = () => (
         `arizona`,
         `rock`,
         `indie`,
+        `band`,
       ]}
     />
     <PageHeading>Upcoming Shows</PageHeading>

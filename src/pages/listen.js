@@ -66,6 +66,7 @@ const Listen = () => (
         `arizona`,
         `rock`,
         `indie`,
+        `band`,
       ]}
     />
     <>

@@ -93,6 +93,7 @@ const Home = () => (
         `arizona`,
         `rock`,
         `indie`,
+        `band`,
       ]}
     />
     <HomeContainer>

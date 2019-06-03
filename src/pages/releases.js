@@ -43,6 +43,7 @@ const Releases = () => (
         `arizona`,
         `rock`,
         `indie`,
+        `band`,
       ]}
     />
     {/* <PageHeading>Physical Releases</PageHeading> */}

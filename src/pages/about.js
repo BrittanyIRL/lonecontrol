@@ -106,6 +106,7 @@ const About = () => {
           `arizona`,
           `rock`,
           `indie`,
+          `band`,
         ]}
       />
       <PageHeading>About</PageHeading>
@@ -159,7 +160,7 @@ const About = () => {
             Lone Control question the means of the why. The push pull incentive
             of aging and irrelevance. One inconsequential notion in a long array
             of impotence. And yet, we exist. We breathe. We sweat. We bleed and
-            fight and fuck and beg for meaning. The silence is an invitation.
+            fight and beg for meaning. The silence is an invitation.
           </p>
 
           <p>
