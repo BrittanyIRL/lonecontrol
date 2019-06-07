@@ -102,7 +102,7 @@ const IndexPage = () => (
       <SplashContainer>
         <SplashText
           alt="Visit Bandcamp to hear the debut EP"
-          href="https://desertdriprecords.bandcamp.com/"
+          href="https://desertdriprecords.bandcamp.com/album/lone-control"
           aria-description="Lone Control"
           target="_blank"
         />

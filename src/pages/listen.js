@@ -75,14 +75,14 @@ const Listen = () => (
       <PageHeading>Listen</PageHeading>
       <TrackContainer>
         <h3>Unnecessary Voice</h3>
-        {/* <iframe
+        <iframe
           width="100%"
           height="166"
           scrolling="no"
           frameborder="no"
           allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/590551725&color=%23495253&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-        /> */}
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/627538080&color=%23495253&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        />
         <SoundCloudAnchor
           href="https://soundcloud.com/lonecontrol"
           target="_blank"
@@ -93,7 +93,7 @@ const Listen = () => (
       <HorizontalLine />
       <StreamingContainer>
         <StreamingOption
-          href="https://desertdriprecords.bandcamp.com/"
+          href="https://desertdriprecords.bandcamp.com/album/lone-control"
           target="_blank"
         >
           BandCamp
