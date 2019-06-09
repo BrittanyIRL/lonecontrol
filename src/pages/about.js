@@ -18,6 +18,7 @@ const AccordionButton = styled.button`
   align-self: center;
   max-width: 50%;
   text-align: center;
+  display: table;
   display: flex;
   align-items: center;
 
@@ -46,6 +47,7 @@ const AboutImage = styled.img`
 `
 
 const AccordionContainer = styled.div`
+  display: table;
   display: flex;
   justify-items: space-between;
   width: 60rem;
@@ -58,6 +60,7 @@ const AccordionContainer = styled.div`
 
 const AccordionControls = styled.div`
   width: 60rem;
+  display: table;
   display: flex;
   align-items: center;
   justify-items: flex-start;
