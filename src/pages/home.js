@@ -50,7 +50,7 @@ const IntroText = styled.p`
   font-weight: ${({ sub }) => (sub ? "500" : "600")};
   font-size: ${({ sub }) => (sub ? "2rem" : "3rem")};
   font-family: ${({ theme, sub }) =>
-    sub ? "default" : theme.font.family.bold};
+    sub ? theme.font.family.primary : theme.font.family.bold};
 
   @media (max-width: 600px) {
     font-size: ${({ sub }) => (sub ? "1.25rem" : "2.25rem")};

@@ -41,6 +41,7 @@ const AboutImage = styled.img`
   max-width: 70vw;
   height: 600px;
   max-height: 60vh;
+  object-position: 0% 50%;
   @media (max-width: 600px) {
     max-width: 90vw;
   }
