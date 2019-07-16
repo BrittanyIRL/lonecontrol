@@ -5,7 +5,6 @@ import styled from "styled-components"
 
 const Line = styled.hr`
   width: 100%;
-  height: 0.2rem;
   color: ${({ theme }) => theme.colors.RAISIN_BLACK};
   margin-bottom: 3rem;
 `
