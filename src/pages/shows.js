@@ -109,10 +109,10 @@ const Shows = () => (
             <Image src={sept5Poster} alt="poster art for Sept 5 show" />
           </ShowPosterContainer>
           <ShowDetailsContainer>
-            <Location>Sept 5, 2019 @ Lunchbox</Location>{" "}
+            <Location>Sept 5, 2019 @ The Trunk Space</Location>
             <SecondaryInfo>
               <OutboundLink
-                href="https://www.lunchboxphx.com/e/cross-record-dovi-lone-control-64343485096/"
+                href="https://www.eventbrite.com/e/cross-record-tickets-65004859284"
                 target="_blank"
               >
                 Tickets Here
