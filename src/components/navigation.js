@@ -181,7 +181,7 @@ const Navigation = ({ showNav, onClickToggleNav }) => {
         </SiteNavigation>
         <SocialNavigation>
           <StyledLinkOutside
-            href="https://desertdriprecords.bandcamp.com/"
+            href="https://desertdriprecords.bandcamp.com/album/lone-control/"
             target="_blank"
           >
             BandCamp

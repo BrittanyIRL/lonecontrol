@@ -100,17 +100,17 @@ const Listen = () => (
         </StreamingOption>
         <StreamingOption
           disabled
-          // href="https://itunes.apple.com/us/artist/lonecontrol"
-          // target="_blank"
+          href="https://music.apple.com/us/artist/lone-control/1480134429"
+          target="_blank"
         >
-          Coming Soon {/* Apple Music */}
+          Apple Music
         </StreamingOption>
         <StreamingOption
           disabled
-          // href="https://spotify.com/lonecontroltemproute"
-          // target="_blank"
+          href="https://open.spotify.com/artist/1mQIWZIhNVI4nrAhxlXHOI"
+          target="_blank"
         >
-          Coming Soon {/* Spotify */}
+          Spotify
         </StreamingOption>
       </StreamingContainer>
     </>

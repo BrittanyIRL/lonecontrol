@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-// import PageHeading from "../components/headings/page-heading"
+import PageHeading from "../components/headings/page-heading"
 
 import epFrontImage from "../images/lc_ep_front.jpg"
 const ReleasesContainer = styled.div`
@@ -46,17 +46,25 @@ const Releases = () => (
         `band`,
       ]}
     />
-    {/* <PageHeading>Physical Releases</PageHeading> */}
+    <PageHeading>Physical Releases</PageHeading>
     <ReleasesContainer>
-      <h3>Lone Control s/t EP coming soon on Desert Drip Records.</h3>
+      <h3>
+        Lone Control <em>s/t</em>
+      </h3>
       <AlbumImage
         src={epFrontImage}
         alt="Self-Titled Album Cover for Lone Control"
       />
+      <p>Released Nov 2019 on Desert Drip Records.</p>
       <p>
-        Follow us on{" "}
-        <a href="https://www.instagram.com/lonecontrol/">Instagram</a> to stay
-        in the know.
+        Listen, download digital, or pre-order the vinyl on{" "}
+        <a
+          href="https://desertdriprecords.bandcamp.com/album/lone-control"
+          title="lone control band camp"
+        >
+          Bandcamp
+        </a>
+        .
       </p>
     </ReleasesContainer>
   </Layout>

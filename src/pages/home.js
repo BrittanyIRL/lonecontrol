@@ -99,18 +99,18 @@ const Home = () => (
     />
     <HomeContainer>
       <IntroText>
-        Lone Control debut single <br /> "Unnecessary Voice"{" "}
+        Lone Control <em>s/t</em> EP out now. <br />
         <HomeLink
-          href="https://soundcloud.com/lonecontrol/unnecessary-voice"
+          href="https://desertdriprecords.bandcamp.com/album/lone-control"
           target="_blank"
         >
-          out now
+          Listen or pre-order vinyl here
         </HomeLink>
         .
       </IntroText>
       <HomeImage />
       <IntroText sub>
-        Lone Control s/t EP coming soon on Desert Drip Records.
+        Lone Control <em>s/t</em> EP released on Desert Drip Records.
       </IntroText>
     </HomeContainer>
   </Layout>
