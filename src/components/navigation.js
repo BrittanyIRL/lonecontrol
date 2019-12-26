@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import styled from "styled-components/macro"
+import styled from "styled-components"
 
 // break for smol views at 600px
 

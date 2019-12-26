@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-import { ThemeProvider } from "styled-components/macro"
+import { ThemeProvider } from "styled-components"
 import { GlobalStyle, theme } from "../styles"
 
 const GlobalLayout = ({ children }) => {
