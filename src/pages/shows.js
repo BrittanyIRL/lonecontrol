@@ -25,7 +25,7 @@ const showList = [
     date: new Date("01-03-2020"),
     imageUrl: jan032020Poster,
     imageAlt: "poster art for Jan 03 show at Quail Lounge",
-    locationText: "Jan 24, 2020 @ Quail Lounge",
+    locationText: "Jan 03, 2020 @ Quail Lounge",
     ticketsUrl: false,
     secondaryInfo: "Free! Opening for Anchor Baby w/ JJCnV",
   },
