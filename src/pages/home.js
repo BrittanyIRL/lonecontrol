@@ -104,7 +104,7 @@ const Home = () => (
           href="https://desertdriprecords.bandcamp.com/album/lone-control"
           target="_blank"
         >
-          Listen or pre-order vinyl here
+          Listen or order vinyl here
         </HomeLink>
         .
       </IntroText>

@@ -6,20 +6,40 @@ import { OutboundLink } from "gatsby-plugin-google-analytics"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
-import nov10Poster from "../images/11-10-2019-trunkspace.png"
+import jan032020Poster from "../images/01-03-2020-quaillounge.png"
+import jan242020Poster from "../images/01-24-2020-trunkspace.jpg"
 import HorizontalLine from "../components/accents/horizontal-line"
 
 const showList = [
   {
-    date: new Date("11-10-2019"),
-    imageUrl: nov10Poster,
-    imageAlt: "poster art for Nov 10 show",
-    locationText: "Nov 10, 2019 @ Trunk Space",
+    date: new Date("01-24-2020"),
+    imageUrl: jan242020Poster,
+    imageAlt: "poster art for Jan 24 show at Trunk Space",
+    locationText: "Jan 24, 2020 @ Trunk Space",
     ticketsUrl:
-      "https://www.eventbrite.com/e/le-wolves-tickets-75775668063?fbclid=IwAR272pJt0_0GdLvOHNZ0QLeTn0EoQfPxbQby6vjq1TjJDz9sqiHDGNwZ4ds",
+      "https://www.eventbrite.com/e/dude-york-tickets-81798863603?fbclid=IwAR1k9AleVL3IOXqNzhQXSLfovkdBhWyzIDYNY6YEJkp2DvBhNMjD23g3nkU",
     ticketsText: "Tickets",
-    secondaryInfo: "With Le Wolves, Soul, and Ring Finger No Pinky",
+    secondaryInfo: "W/ Dude York & MRCH",
   },
+  {
+    date: new Date("01-03-2020"),
+    imageUrl: jan032020Poster,
+    imageAlt: "poster art for Jan 03 show at Quail Lounge",
+    locationText: "Jan 24, 2020 @ Quail Lounge",
+    ticketsUrl: false,
+    secondaryInfo: "Free! Opening for Anchor Baby w/ JJCnV",
+  },
+
+  // {
+  //   date: new Date("11-10-2019"),
+  //   imageUrl: nov10Poster,
+  //   imageAlt: "poster art for Nov 10 show",
+  //   locationText: "Nov 10, 2019 @ Trunk Space",
+  //   ticketsUrl:
+  //     "https://www.eventbrite.com/e/le-wolves-tickets-75775668063?fbclid=IwAR272pJt0_0GdLvOHNZ0QLeTn0EoQfPxbQby6vjq1TjJDz9sqiHDGNwZ4ds",
+  //   ticketsText: "Tickets",
+  //   secondaryInfo: "With Le Wolves, Soul, and Ring Finger No Pinky",
+  // },
 
   // {
   //   date: new Date("9-5-2019"),

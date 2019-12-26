@@ -57,7 +57,7 @@ const Releases = () => (
       />
       <p>Released Nov 2019 on Desert Drip Records.</p>
       <p>
-        Listen, download digital, or pre-order the vinyl on{" "}
+        Listen, download digital, or order the vinyl on{" "}
         <a
           href="https://desertdriprecords.bandcamp.com/album/lone-control"
           title="lone control band camp"
