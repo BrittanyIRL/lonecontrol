@@ -166,9 +166,9 @@ const Navigation = ({ showNav, onClickToggleNav }) => {
           <StyledLink activeClassName="active" to="/listen/">
             Listen
           </StyledLink>
-          {/* <StyledLink activeClassName="active" to="/watch/">
+          <StyledLink activeClassName="active" to="/watch/">
             Watch
-          </StyledLink> */}
+          </StyledLink>
           <StyledLink activeClassName="active" to="/shows/">
             Shows
           </StyledLink>

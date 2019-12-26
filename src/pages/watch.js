@@ -46,18 +46,17 @@ const Video = () => (
       <PageHeading>Watch</PageHeading>
 
       <VideoContainer>
-        <h3>Video #1</h3>
-        <p>Description</p>
-        <p>Month, Year</p>
-        <p>Credits</p>
+        <h3>What You Deserve</h3>
+        <p>Album: Self Titled EP</p>
+        <p>Released: November 2019</p>
         <iframe
-          src="https://www.youtube.com/embed/kzVnd3AHx1I"
           width="100%"
           scrolling="no"
           frameborder="no"
+          src="https://www.youtube.com/embed/G25Y5sj6cyI"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        />
+        ></iframe>
       </VideoContainer>
     </>
   </Layout>
