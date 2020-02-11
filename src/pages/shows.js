@@ -31,7 +31,7 @@ const showList = [
     date: new Date("02-22-2020"),
     imageUrl: feb222020Poster,
     imageAlt: "poster art for Feb 22 show at TBA",
-    locationText: "Feb 22, 2020 @ Monarch (El Paso, NM)",
+    locationText: "Feb 22, 2020 @ Monarch (El Paso, TX)",
     ticketsUrl: false,
     secondaryInfo: "Free",
   },
