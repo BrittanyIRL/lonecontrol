@@ -6,58 +6,43 @@ import { OutboundLink } from "gatsby-plugin-google-analytics"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
-import jan032020Poster from "../images/01-03-2020-quaillounge.png"
-import jan242020Poster from "../images/01-24-2020-trunkspace.jpg"
+import feb192020Poster from "../images/02-19-2020-disco.png"
+import feb222020Poster from "../images/02-22-2020-monarch.png"
+import march112020Poster from "../images/03-11-2020-cardiff.png"
 import HorizontalLine from "../components/accents/horizontal-line"
 
 const showList = [
   {
-    date: new Date("01-24-2020"),
-    imageUrl: jan242020Poster,
-    imageAlt: "poster art for Jan 24 show at Trunk Space",
-    locationText: "Jan 24, 2020 @ Trunk Space",
-    ticketsUrl:
-      "https://www.eventbrite.com/e/dude-york-tickets-81798863603?fbclid=IwAR1k9AleVL3IOXqNzhQXSLfovkdBhWyzIDYNY6YEJkp2DvBhNMjD23g3nkU",
-    ticketsText: "Tickets",
-    secondaryInfo: "W/ Dude York & MRCH",
+    date: new Date("02-19-2020"),
+    imageUrl: feb192020Poster,
+    imageAlt: "poster art for Feb 19 show at Disco Inferno",
+    locationText: "Feb 19, 2020 @ Disco Inferno (Tempe, AZ)",
+    secondaryInfo: "Tickets at Door",
   },
   {
-    date: new Date("01-03-2020"),
-    imageUrl: jan032020Poster,
-    imageAlt: "poster art for Jan 03 show at Quail Lounge",
-    locationText: "Jan 03, 2020 @ Quail Lounge",
+    date: new Date("02-21-2020"),
+    // imageUrl: jan032020Poster,
+    imageAlt: "poster art for Feb 21 show at TBA",
+    locationText: "Feb 21, 2020 @ TBA (Las Cruces, NM)",
     ticketsUrl: false,
-    secondaryInfo: "Free! Opening for Anchor Baby w/ JJCnV",
+    secondaryInfo: "Tickets at Door",
   },
-
-  // {
-  //   date: new Date("11-10-2019"),
-  //   imageUrl: nov10Poster,
-  //   imageAlt: "poster art for Nov 10 show",
-  //   locationText: "Nov 10, 2019 @ Trunk Space",
-  //   ticketsUrl:
-  //     "https://www.eventbrite.com/e/le-wolves-tickets-75775668063?fbclid=IwAR272pJt0_0GdLvOHNZ0QLeTn0EoQfPxbQby6vjq1TjJDz9sqiHDGNwZ4ds",
-  //   ticketsText: "Tickets",
-  //   secondaryInfo: "With Le Wolves, Soul, and Ring Finger No Pinky",
-  // },
-
-  // {
-  //   date: new Date("9-5-2019"),
-  //   imageUrl: sept5Poster,
-  //   imageAlt: "poster art for Sept 5 show",
-  //   locationText: "Sept 5, 2019 @ Trunk Space",
-  //   ticketsUrl: "https://www.eventbrite.com/e/cross-record-tickets-65004859284",
-  //   ticketsText: "Tickets Here",
-  //   secondaryInfo: "With Cross Record, Dovi and Justin Moody",
-  // },
-  // {
-  //   date: new Date("8-26-2019"),
-  //   imageUrl: aug26Poster,
-  //   imageAlt: "poster art for Aug 26 show with Twompsax and Lenguas Largas",
-  //   locationText: "Aug 26, 2019 @ Sky Bar, Tuscon AZ",
-  //   ticketsUrl: false,
-  //   secondaryInfo: "Free! Playing with Twompsax and Lenguas Largas",
-  // },
+  {
+    date: new Date("02-22-2020"),
+    imageUrl: feb222020Poster,
+    imageAlt: "poster art for Feb 22 show at TBA",
+    locationText: "Feb 22, 2020 @ Monarch (El Paso, NM)",
+    ticketsUrl: false,
+    secondaryInfo: "Free",
+  },
+  {
+    date: new Date("03-11-2020"),
+    imageUrl: march112020Poster,
+    imageAlt: "poster art for March 11 show at TBA",
+    locationText: " March 11, 2020 @ Cardiff Giant (Phoenix, AZ)",
+    ticketsUrl: false,
+    secondaryInfo: "Tickets at Door",
+  },
 ]
 
 const Container = styled.div`
@@ -102,6 +87,8 @@ const ShowDetailsContainer = styled.div`
 `
 const Image = styled.img`
   height: 30rem;
+  min-height: 30rem;
+  background-color: black;
   object-fit: contain;
   object-position: top;
 `

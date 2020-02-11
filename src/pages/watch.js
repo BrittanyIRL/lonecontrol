@@ -7,6 +7,7 @@ import PageHeading from "../components/headings/page-heading"
 
 const VideoContainer = styled.div`
   width: 100%;
+  margin-bottom: 2rem;
   & > iframe {
     padding-top: 2rem;
 
@@ -44,6 +45,20 @@ const Video = () => (
     />
     <>
       <PageHeading>Watch</PageHeading>
+      <VideoContainer>
+        <h3>My Life Is My Fault</h3>
+        <p>Album: Self Titled EP</p>
+        <p>Released: November 2019</p>
+
+        <iframe
+          width="100%"
+          scrolling="no"
+          src="https://www.youtube.com/embed/b09PS2AckSc"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      </VideoContainer>
 
       <VideoContainer>
         <h3>What You Deserve</h3>
