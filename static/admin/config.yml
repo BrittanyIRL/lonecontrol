@@ -1,0 +1,15 @@
+backend:
+  name: github
+  repo: BrittanyIRL/lonecontrol
+media_folder: static/assets
+public_folder: /public
+collections:
+  - name: shows
+    label: Shows
+    folder: shows
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: venue, label: Venue }
+      - { name: link, label: Link }
