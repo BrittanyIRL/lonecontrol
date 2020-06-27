@@ -21,6 +21,15 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        commonmark: true,
+        footnotes: true,
+        pedantic: true,
+        gfm: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-netlify-cms`,
     },
     {

@@ -1,5 +1,6 @@
 // import PropTypes from "prop-types"
 import React from "react"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
@@ -92,11 +93,22 @@ const Image = styled.img`
   object-fit: contain;
   object-position: top;
 `
-const Shows = () => {
+const Shows = (props) => {
+  console.log("SHOW PROPS ", props.data.file.childMarkdownRemark)
+
+  const {
+    title,
+    body,
+    contact,
+    upcomingShows,
+  } = props.data.file.childMarkdownRemark.frontmatter
+
+  console.log("title info", title, info)
+  console.log("shows list: ", upcomingShows)
   // TODO import date-fns to do better filtering to include today's date in returned results
   // TODO sort
   const upcomingShowList = showList
-    .filter(show => show.date >= new Date())
+    .filter((show) => show.date >= new Date())
     .sort((showA, showB) => showA.date < showB.date)
 
   return (
@@ -120,16 +132,13 @@ const Shows = () => {
           `band`,
         ]}
       />
-      <PageHeading>Upcoming Shows</PageHeading>
+      <PageHeading>{title}</PageHeading>
       <Container>
-        <p>Currently booking gigs for the Phoenix metro area.</p>
-        <p>
-          If you want to get in touch please{" "}
-          <a href="mailto:lonecontrolmusic@gmail.com">email us</a>.
-        </p>
+        <p>{body}</p>
+        <p>{contact}</p>
         <HorizontalLine />
         <ul>
-          {upcomingShowList.map(show => {
+          {upcomingShowList.map((show) => {
             return (
               <Show>
                 <ShowPosterContainer>
@@ -156,3 +165,28 @@ const Shows = () => {
 }
 
 export default Shows
+
+export const query = graphql`
+  {
+    file(relativePath: { eq: "shows.md" }) {
+      id
+      childMarkdownRemark {
+        frontmatter {
+          upcomingShows {
+            city
+            info
+            date
+            posterAlt
+            showPoster
+            ticketsUrl
+            venue
+          }
+          title
+          body
+          contact
+          info
+        }
+      }
+    }
+  }
+`
