@@ -7,6 +7,20 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "images",
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `shows`,
+        path: `${__dirname}/src/showsList`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-netlify-cms`,
     },
     {

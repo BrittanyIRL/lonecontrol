@@ -2,20 +2,21 @@ backend:
   name: github
   repo: BrittanyIRL/lonecontrol
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/assets
+public_folder: /assets
 
 collections:
-  - name: shows
-    label: Shows
-    folder: src/showsList
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: venue, label: Venue }
-      - { name: ticketsUrl, label: TicketsUrl }
-      - { name: showPoster, label: Poster, widget: image }
-      - { name: posterAlt, label: PosterAltText }
-      - { name: city, label: City }
-      - { name: info, label: OtherInfo }
+  - label: Pages
+    name: pages
+    files:
+      - label: "Shows List"
+        name: "shows"
+        file: "content/shows.md"
+        fields:
+          - { name: date, label: Date, widget: datetime }
+          - { name: venue, label: Venue }
+          - { name: ticketsUrl, label: TicketsUrl }
+          - { name: showPoster, label: Poster, widget: image }
+          - { name: posterAlt, label: PosterAltText }
+          - { name: city, label: City }
+          - { name: info, label: OtherInfo }
