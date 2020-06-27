@@ -16,17 +16,17 @@ collections:
           - { name: title, label: Title }
           - { name: body, label: Body }
           - {
-          label: "Upcoming Shows",
-          name: upcomingShows,
-          widget: list,
-          fields:
-            [
-              { name: date, label: Date, widget: datetime },
-              { name: venue, label: Venue },
-              { name: ticketsUrl, label: TicketsUrl },
-              { name: showPoster, label: Poster, widget: image },
-              { name: posterAlt, label: PosterAltText },
-              { name: city, label: City },
-              { name: info, label: OtherInfo }
-            ]
-          }
+              label: "Upcoming Shows",
+              name: upcomingShows,
+              widget: list,
+              fields:
+                [
+                  { name: date, label: Date, widget: datetime },
+                  { name: venue, label: Venue },
+                  { name: ticketsUrl, label: TicketsUrl },
+                  { name: showPoster, label: Poster, widget: image },
+                  { name: posterAlt, label: PosterAltText },
+                  { name: city, label: City },
+                  { name: info, label: OtherInfo },
+                ],
+            }
