@@ -8,7 +8,7 @@ venue: One venue
 title: UPCOMING SHOWS
 upcomingShows:
   - date: 2020-06-27T22:58:43.840Z
-    venue: venue numero 1
+    venue: venue numero 1!!!
     ticketsUrl: url.com/333
     showPoster: /assets/winston.jpg
     posterAlt: alt text
