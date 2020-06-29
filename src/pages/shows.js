@@ -98,16 +98,16 @@ const Shows = (props) => {
 
   const {
     title,
-    body,
+    main,
     contact,
     upcomingShows,
   } = props.data.file.childMarkdownRemark.frontmatter
 
-  console.log("title info", title, info)
+  console.log("title info", title, main)
   console.log("shows list: ", upcomingShows)
   // TODO import date-fns to do better filtering to include today's date in returned results
   // TODO sort
-  const upcomingShowList = showList
+  const upcomingShowList = upcomingShows
     .filter((show) => show.date >= new Date())
     .sort((showA, showB) => showA.date < showB.date)
 
@@ -134,18 +134,22 @@ const Shows = (props) => {
       />
       <PageHeading>{title}</PageHeading>
       <Container>
-        <p>{body}</p>
+        <p>{main}</p>
         <p>{contact}</p>
         <HorizontalLine />
         <ul>
           {upcomingShowList.map((show) => {
             return (
               <Show>
-                <ShowPosterContainer>
-                  <Image src={show.imageUrl} alt={show.imageAlt} />
-                </ShowPosterContainer>
+                {show.showPoster && (
+                  <ShowPosterContainer>
+                    <Image src={show.showPoster} alt={show.posterAlt} />
+                  </ShowPosterContainer>
+                )}
                 <ShowDetailsContainer>
-                  <Location>{show.locationText}</Location>
+                  <Location>
+                    {show.date} {show.venue} {show.location}
+                  </Location>
                   {show.ticketsUrl && (
                     <SecondaryInfo>
                       <OutboundLink href={show.ticketsUrl} target="_blank">
@@ -153,7 +157,9 @@ const Shows = (props) => {
                       </OutboundLink>
                     </SecondaryInfo>
                   )}
-                  <SecondaryInfo>{show.secondaryInfo}</SecondaryInfo>
+                  {show.secondaryInfo && (
+                    <SecondaryInfo>{show.secondaryInfo}</SecondaryInfo>
+                  )}
                 </ShowDetailsContainer>
               </Show>
             )
@@ -173,18 +179,19 @@ export const query = graphql`
       childMarkdownRemark {
         frontmatter {
           upcomingShows {
-            city
-            info
+            date
+            venue
+            location
+            secondaryInfo
             date
             posterAlt
             showPoster
             ticketsUrl
-            venue
+            ticketsText
           }
           title
-          body
+          main
           contact
-          info
         }
       }
     }
