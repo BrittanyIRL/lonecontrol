@@ -1,6 +1,5 @@
 ---
-contact: "If you want to get in touch please [email us](<mailto:
-  lonecontrolmusic@gmail.com>)."
+contact: If you want to get in touch please email us at lonecontrolmusic@gmail.com
 ticketsUrl: jalkfjaldfjalfdj.com
 showPoster: /assets/winston.jpg
 city: New York City
