@@ -15,7 +15,7 @@ upcomingShows:
     showPoster: /assets/winston.jpg
     city: phoenix
     info: more info about htis thing
-    date: 2020-06-30T02:30:00.000Z
+    date: 2020-07-11T02:30:00.000Z
     venue: Crescent Ballroom
     ticketsText: Buy tickets here
     location: Phoenix
@@ -25,7 +25,7 @@ upcomingShows:
     showPoster: /assets/winston.jpg
     city: Tempe
     info: more info
-    date: 2020-06-30T22:59:24.061Z
+    date: 2020-07-07T22:59:24.061Z
     venue: Mystery Location
     ticketsText: Tickets at Door
     location: Tempe
