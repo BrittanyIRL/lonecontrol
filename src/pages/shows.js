@@ -5,6 +5,8 @@ import styled from "styled-components"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 import PropTypes from "prop-types"
 import format from "date-fns/format"
+import isAfter from "date-fns/isAfter"
+import endOfYesterday from "date-fns/endOfYesterday"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -79,8 +81,8 @@ const Image = styled.img`
 export const ShowsWrapper = ({ data }) => {
   const { title = "Shows", main, contact, upcomingShows } = data
 
-  const upcomingShowList = upcomingShows
-    .filter((show) => new Date(show.date) >= new Date())
+  const upcomingShowList = data.upcomingShows
+    .filter((show) => isAfter(new Date(show.date), endOfYesterday()))
     .sort((showA, showB) => showA.date < showB.date)
 
   return (
