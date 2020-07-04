@@ -7,7 +7,27 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-netlify-cms`,
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/assets`,
+        name: "images",
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        commonmark: true,
+        footnotes: true,
+        pedantic: true,
+        gfm: true,
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -65,6 +85,12 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
