@@ -13,7 +13,7 @@ upcomingShows:
     ticketsAtDoor: false
     ticketsUrl: FAKE DATA NECESSARY - DO NOT DELETE
     showPoster: /assets/winston.jpg
-    date: 2020-06-30T21:54:42.682Z
+    date: 1999-06-30T21:54:00.000Z
     venue: FAKE DATA NECESSARY - DO NOT DELETE
     ticketsText: FAKE DATA NECESSARY - DO NOT DELETE
     location: FAKE DATA NECESSARY - DO NOT DELETE
