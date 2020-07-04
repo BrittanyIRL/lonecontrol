@@ -104,8 +104,8 @@ export const ShowsWrapper = ({ data }) => {
                 )}
                 <ShowDetailsContainer>
                   <Location>
-                    {format(new Date(show.date), "M/d/yyyy p")} at {show.venue}{" "}
-                    in {show.location}
+                    {format(new Date(show.date), "M/d/yyyy")} at {show.venue} in{" "}
+                    {show.location}
                   </Location>
                   {!show.ticketsAtDoor ? (
                     show.ticketsUrl && (
@@ -116,7 +116,7 @@ export const ShowsWrapper = ({ data }) => {
                       </SecondaryInfo>
                     )
                   ) : (
-                    <SecondaryInfo>"Tickets at Door"</SecondaryInfo>
+                    <SecondaryInfo>Tickets at Door</SecondaryInfo>
                   )}
                   {show.secondaryInfo && (
                     <SecondaryInfo>{show.secondaryInfo}</SecondaryInfo>

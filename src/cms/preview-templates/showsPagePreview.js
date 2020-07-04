@@ -13,18 +13,28 @@ const ShowPagePreview = ({ entry }) => {
       <p>{data.contact}</p>
       <ul>
         {data.upcomingShows.map((show, id) => {
+          console.log("show: ", show)
+          if (!show.date) {
+            return null
+          }
           return (
             <li key={id}>
               {show.showPoster && (
                 <img src={show.showPoster} alt={show.posterAlt} />
               )}
               <span>
-                {format(new Date(show.date), "M/d/yyyy p")} at {show.venue} in{" "}
+                {format(new Date(show.date), "M/d/yyyy")} at {show.venue} in{" "}
                 {show.location}
               </span>
               <br />
-              {show.ticketsUrl && (
-                <a href={show.ticketsUrl}>{show.ticketsText}</a>
+              {!show.ticketsAtDoor ? (
+                show.ticketsUrl && (
+                  <span>
+                    <a href={show.ticketsUrl}>{show.ticketsText}</a>
+                  </span>
+                )
+              ) : (
+                <span>Tickets at Door</span>
               )}
               <br />
               {show.secondaryInfo}
