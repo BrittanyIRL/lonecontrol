@@ -8,7 +8,16 @@ date: 2020-06-27T22:30:25.562Z
 venue: One venue
 title: Upcoming Shows
 main: Currently booking gigs for the Phoenix metro area.
-upcomingShows: []
+upcomingShows:
+  - secondaryInfo: FAKE DATA NECESSARY - DO NOT DELETE
+    ticketsAtDoor: false
+    ticketsUrl: FAKE DATA NECESSARY - DO NOT DELETE
+    showPoster: /assets/winston.jpg
+    date: 2020-06-30T21:54:42.682Z
+    venue: FAKE DATA NECESSARY - DO NOT DELETE
+    ticketsText: FAKE DATA NECESSARY - DO NOT DELETE
+    location: FAKE DATA NECESSARY - DO NOT DELETE
+    posterAlt: FAKE DATA NECESSARY - DO NOT DELETE
 posterAlt: john wick three end
 ---
 Currently booking gigs for the Phoenix metro area.
