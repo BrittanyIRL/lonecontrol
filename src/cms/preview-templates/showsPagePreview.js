@@ -13,8 +13,7 @@ const ShowPagePreview = ({ entry }) => {
       <p>{data.contact}</p>
       <ul>
         {data.upcomingShows.map((show, id) => {
-          console.log("show: ", show)
-          if (!show.date) {
+          if (Object.keys(show).length <= 0) {
             return null
           }
           return (

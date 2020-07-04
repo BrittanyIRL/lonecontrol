@@ -36,8 +36,8 @@ const Container = styled.div`
     margin-bottom: 0.8rem;
   }
   a {
-    border-bottom: 0.05rem solid ${({ theme }) => theme?.colors.RAISIN_BLACK};
-    color: ${({ theme }) => theme?.colors.RAISIN_BLACK};
+    border-bottom: 0.05rem solid ${({ theme }) => theme.colors.RAISIN_BLACK};
+    color: ${({ theme }) => theme.colors.RAISIN_BLACK};
     &:hover {
       font-style: italic;
     }
@@ -78,9 +78,7 @@ const Image = styled.img`
 
 export const ShowsWrapper = ({ data }) => {
   const { title = "Shows", main, contact, upcomingShows } = data
-  console.log("made it to SHOWS wrapper", title, upcomingShows)
 
-  // TODO import date-fns to do better filtering to include today's date in returned results
   const upcomingShowList = upcomingShows
     .filter((show) => new Date(show.date) >= new Date())
     .sort((showA, showB) => showA.date < showB.date)
@@ -94,7 +92,7 @@ export const ShowsWrapper = ({ data }) => {
         <p>{contact}</p>
         <HorizontalLine />
         <ul>
-          {upcomingShows.map((show, id) => {
+          {upcomingShowList.map((show, id) => {
             return (
               <Show key={id}>
                 {show.showPoster && (
