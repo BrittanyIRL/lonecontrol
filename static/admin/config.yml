@@ -21,7 +21,7 @@ collections:
             }
           - { name: title, label: Title, widget: string }
           - { name: main, label: Main, widget: text }
-          - { name: contact, label: Contact, widget: markdown }
+          - { name: contact, label: Contact, widget: text }
           - {
               label: "Upcoming Shows",
               name: upcomingShows,
@@ -36,14 +36,15 @@ collections:
                     widget: string,
                     required: true,
                   },
+                  {
+                    name: ticketsAtDoor,
+                    label: ticketsAtDoor,
+                    widget: boolean,
+                  },
                   { name: ticketsUrl, label: TicketsUrl, widget: string },
                   { name: ticketsText, label: TicketsText, widget: string },
                   { name: showPoster, label: Poster, widget: image },
                   { name: posterAlt, label: PosterAltText, widget: string },
-                  {
-                    name: secondaryInfo,
-                    label: SecondaryInfo,
-                    widget: markdown,
-                  },
+                  { name: secondaryInfo, label: SecondaryInfo, widget: string },
                 ],
             }

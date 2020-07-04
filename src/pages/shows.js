@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 import PropTypes from "prop-types"
+import format from "date-fns/format"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -35,8 +36,8 @@ const Container = styled.div`
     margin-bottom: 0.8rem;
   }
   a {
-    border-bottom: 0.05rem solid ${({ theme }) => theme.colors.RAISIN_BLACK};
-    color: ${({ theme }) => theme.colors.RAISIN_BLACK};
+    border-bottom: 0.05rem solid ${({ theme }) => theme?.colors.RAISIN_BLACK};
+    color: ${({ theme }) => theme?.colors.RAISIN_BLACK};
     &:hover {
       font-style: italic;
     }
@@ -75,7 +76,8 @@ const Image = styled.img`
   object-position: top;
 `
 
-export const ShowsWrapper = ({ title, main, contact, upcomingShows }) => {
+export const ShowsWrapper = ({ data }) => {
+  const { title = "Shows", main, contact, upcomingShows } = data
   console.log("made it to SHOWS wrapper", title, upcomingShows)
 
   // TODO import date-fns to do better filtering to include today's date in returned results
@@ -91,35 +93,40 @@ export const ShowsWrapper = ({ title, main, contact, upcomingShows }) => {
         <p>{main}</p>
         <p>{contact}</p>
         <HorizontalLine />
+        <ul>
+          {upcomingShows.map((show, id) => {
+            return (
+              <Show key={id}>
+                {show.showPoster && (
+                  <ShowPosterContainer>
+                    <Image src={show.showPoster} alt={show.posterAlt} />
+                  </ShowPosterContainer>
+                )}
+                <ShowDetailsContainer>
+                  <Location>
+                    {format(new Date(show.date), "M/d/yyyy p")} at {show.venue}{" "}
+                    in {show.location}
+                  </Location>
+                  {!show.ticketsAtDoor ? (
+                    show.ticketsUrl && (
+                      <SecondaryInfo>
+                        <OutboundLink href={show.ticketsUrl} target="_blank">
+                          {show.ticketsText}
+                        </OutboundLink>
+                      </SecondaryInfo>
+                    )
+                  ) : (
+                    <SecondaryInfo>"Tickets at Door"</SecondaryInfo>
+                  )}
+                  {show.secondaryInfo && (
+                    <SecondaryInfo>{show.secondaryInfo}</SecondaryInfo>
+                  )}
+                </ShowDetailsContainer>
+              </Show>
+            )
+          })}
+        </ul>
       </Container>
-      <ul>
-        {upcomingShowList.map((show, id) => {
-          return (
-            <Show key={id}>
-              {show.showPoster && (
-                <ShowPosterContainer>
-                  <Image src={show.showPoster} alt={show.posterAlt} />
-                </ShowPosterContainer>
-              )}
-              <ShowDetailsContainer>
-                <Location>
-                  {show.date} {show.venue} {show.location}
-                </Location>
-                {show.ticketsUrl && (
-                  <SecondaryInfo>
-                    <OutboundLink href={show.ticketsUrl} target="_blank">
-                      {show.ticketsText}
-                    </OutboundLink>
-                  </SecondaryInfo>
-                )}
-                {show.secondaryInfo && (
-                  <SecondaryInfo>{show.secondaryInfo}</SecondaryInfo>
-                )}
-              </ShowDetailsContainer>
-            </Show>
-          )
-        })}
-      </ul>
     </Layout>
   )
 }
@@ -138,6 +145,7 @@ ShowsWrapper.propTypes = {
       showPoster: PropTypes.string,
       ticketsUrl: PropTypes.string,
       ticketsText: PropTypes.string,
+      ticketsAtDoor: PropTypes.bool,
     })
   ),
 }
@@ -150,14 +158,7 @@ const Shows = ({ data }) => {
     upcomingShows,
   } = data.file.childMarkdownRemark.frontmatter
 
-  return (
-    <ShowsWrapper
-      title={title}
-      main={main}
-      contact={contact}
-      upcomingShows={upcomingShows}
-    />
-  )
+  return <ShowsWrapper data={{ title, main, contact, upcomingShows }} />
 }
 
 export default Shows
@@ -177,6 +178,7 @@ export const query = graphql`
             showPoster
             ticketsUrl
             ticketsText
+            ticketsAtDoor
           }
           title
           main
