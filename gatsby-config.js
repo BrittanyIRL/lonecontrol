@@ -30,9 +30,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-netlify-cms`,
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-141294213-1",
@@ -88,6 +85,31 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
+      },
+    },
+    // {
+    //   resolve: `gatsby-plugin-netlify-cms`,
+    // },
+    // {
+    //   resolve: "gatsby-plugin-netlify-cms",
+    //   options: {
+    //     modulePath: `${__dirname}/cms/cms.js`,
+    //   },
+    // },
+
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        // manualInit: true,
+        // enableIdentityWidget: false,
+        // customizeWebpackConfig: (config, { plugins }) => {
+        //   config.plugins.push(
+        //     plugins.define({
+        //       __MANIFEST_PLUGIN_HAS_LOCALISATION__: JSON.stringify("false"),
+        //     })
+        //   )
+        // },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
