@@ -4,7 +4,7 @@ leadImage: /assets/pressshot2019.jpg
 leadImageAlt: Gerrit Feenstra and Chris Trian, the two members of Lone Control.
 etherealLead: Ethereal Version
 etherealContent: >
-  <p>Lone Control is a blip. Shrill. Loud. And now.</p>
+  <p>Lone Control is a blip. Shrill. Loud. And now.</p> 
 
   <p>You can live your life without so many things, so many experiences, purchased or otherwise.</p>
 
