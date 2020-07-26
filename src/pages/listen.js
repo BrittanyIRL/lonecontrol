@@ -1,5 +1,6 @@
 // import PropTypes from "prop-types"
 import React from "react"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
@@ -50,71 +51,78 @@ const StreamingOption = styled(OutboundLink)`
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
 `
 
-const Listen = () => (
-  <Layout>
-    <SEO
-      title="Listen"
-      keywords={[
-        `phoenix`,
-        `punk`,
-        `music`,
-        `chris`,
-        `gerrit`,
-        `desert drip`,
-        `new music`,
-        `unnecessary voice`,
-        `lone control`,
-        `loan control`,
-        `arizona`,
-        `rock`,
-        `indie`,
-        `band`,
-      ]}
-    />
-    <>
-      <PageHeading>Listen</PageHeading>
-      <TrackContainer>
-        <h3>Unnecessary Voice</h3>
-        <iframe
-          width="100%"
-          height="166"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/627538080&color=%23495253&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-        />
-        <SoundCloudAnchor
-          href="https://soundcloud.com/lonecontrol"
-          target="_blank"
-        >
-          More on SoundCloud
-        </SoundCloudAnchor>
-      </TrackContainer>
-      <HorizontalLine />
-      <StreamingContainer>
-        <StreamingOption
-          href="https://desertdriprecords.bandcamp.com/album/lone-control"
-          target="_blank"
-        >
-          BandCamp
-        </StreamingOption>
-        <StreamingOption
-          disabled
-          href="https://music.apple.com/us/artist/lone-control/1480134429"
-          target="_blank"
-        >
-          Apple Music
-        </StreamingOption>
-        <StreamingOption
-          disabled
-          href="https://open.spotify.com/artist/1mQIWZIhNVI4nrAhxlXHOI"
-          target="_blank"
-        >
-          Spotify
-        </StreamingOption>
-      </StreamingContainer>
-    </>
-  </Layout>
-)
+const Listen = ({ data }) => {
+  const {
+    keywords,
+    heading,
+    promoFocus,
+  } = data.file.childMarkdownRemark.frontmatter
+
+  return (
+    <Layout>
+      <SEO title="Listen" keywords={keywords} />
+      <>
+        <PageHeading>{heading}</PageHeading>
+        <TrackContainer>
+          <h3>{heading}</h3>
+          <iframe
+            width="100%"
+            height="166"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src={promoFocus[0].soundcloudIframeSource}
+          />
+          <SoundCloudAnchor href={promoFocus[0].soundcloudLink} target="_blank">
+            {promoFocus[0].linkText}
+          </SoundCloudAnchor>
+        </TrackContainer>
+        <HorizontalLine />
+        <StreamingContainer>
+          <StreamingOption
+            href="https://desertdriprecords.bandcamp.com/album/lone-control"
+            target="_blank"
+          >
+            BandCamp
+          </StreamingOption>
+          <StreamingOption
+            disabled
+            href="https://music.apple.com/us/artist/lone-control/1480134429"
+            target="_blank"
+          >
+            Apple Music
+          </StreamingOption>
+          <StreamingOption
+            disabled
+            href="https://open.spotify.com/artist/1mQIWZIhNVI4nrAhxlXHOI"
+            target="_blank"
+          >
+            Spotify
+          </StreamingOption>
+        </StreamingContainer>
+      </>
+    </Layout>
+  )
+}
 
 export default Listen
+
+export const query = graphql`
+  {
+    file(relativePath: { eq: "listen.md" }) {
+      id
+      childMarkdownRemark {
+        frontmatter {
+          keywords
+          heading
+          promoFocus {
+            track
+            soundcloudIframeSource
+            soundcloudLink
+            linkText
+          }
+        }
+      }
+    }
+  }
+`

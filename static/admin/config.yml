@@ -9,6 +9,51 @@ collections:
   - label: Pages
     name: pages
     files:
+      - label: "releases"
+        name: "releases"
+        file: "content/releases.md"
+        fields:
+          - { name: keywords, label: keywords, widget: list }
+          - { name: heading, label: heading, widget: string }
+          - {
+              label: releases,
+              name: releases,
+              widget: list,
+              fields:
+                [
+                  { name: title, label: title, widget: string },
+                  { name: art, label: albumArt, widget: image },
+                  { name: artAlt, label: albumArtAlt, widget: string },
+                  { name: releaseText, label: releaseText, widget: string },
+                  { name: listenText, label: listenText, widget: text },
+                ],
+            }
+      - label: "listen"
+        name: "listen"
+        file: "content/listen.md"
+        fields:
+          - { name: keywords, label: keywords, widget: list }
+          - { name: heading, label: heading, widget: string }
+          - {
+              label: promoFocus,
+              name: promoFocus,
+              widget: list,
+              fields:
+                [
+                  { name: track, label: track, widget: string },
+                  {
+                    name: soundcloudIframeSource,
+                    label: soundcloudIframeSource,
+                    widget: string,
+                  },
+                  {
+                    name: soundcloudLink,
+                    label: soundcloudLink,
+                    widget: string,
+                  },
+                  { name: linkText, label: linkText, widget: string },
+                ],
+            }
       - label: "splash"
         name: "splash"
         file: "content/splash.md"
