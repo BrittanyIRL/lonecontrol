@@ -64,7 +64,7 @@ const Listen = ({ data }) => {
       <>
         <PageHeading>{heading}</PageHeading>
         <TrackContainer>
-          <h3>{heading}</h3>
+          <h3>{promoFocus[0].track}</h3>
           <iframe
             width="100%"
             height="166"
