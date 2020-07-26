@@ -17,9 +17,9 @@ collections:
           - { name: leadImage, label: leadImage, widget: image }
           - { name: leadImageAlt, label: leadImageAlt, widget: string }
           - { name: etherealLead, label: etherealLead, widget: string }
-          - { name: etherealContent, label: etherealContent, widget: markdown }
+          - { name: etherealContent, label: etherealContent, widget: text }
           - { name: tangibleLead, label: tangibleLead, widget: string }
-          - { name: tangibleContent, label: tangibleContent, widget: markdown }
+          - { name: tangibleContent, label: tangibleContent, widget: text }
       - label: "Shows Page"
         name: "shows"
         file: "content/shows.md"
