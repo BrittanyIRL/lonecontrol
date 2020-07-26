@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
@@ -17,7 +18,7 @@ const HomeImage = styled.div`;
   max-width: 600px;
   height: 400px;
   max-height: 500px;
-  background-image: url(${epFrontImageColor});
+  background-image: ${({ image }) => `url(${image})`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -76,44 +77,49 @@ const HomeLink = styled(OutboundLink)`
     font-size: ${({ sub }) => (sub ? "1rem" : "2rem")};
   }
 `
-const Home = () => (
-  <Layout>
-    <SEO
-      title="Home"
-      keywords={[
-        `phoenix`,
-        `punk`,
-        `music`,
-        `chris`,
-        `gerrit`,
-        `desert drip`,
-        `new music`,
-        `unnecessary voice`,
-        `lone control`,
-        `loan control`,
-        `arizona`,
-        `rock`,
-        `indie`,
-        `band`,
-      ]}
-    />
-    <HomeContainer>
-      <IntroText>
-        Lone Control <em>s/t</em> EP out now. <br />
-        <HomeLink
-          href="https://desertdriprecords.bandcamp.com/album/lone-control"
-          target="_blank"
-        >
-          Listen or order vinyl here
-        </HomeLink>
-        .
-      </IntroText>
-      <HomeImage />
-      <IntroText sub>
-        Lone Control <em>s/t</em> EP released on Desert Drip Records.
-      </IntroText>
-    </HomeContainer>
-  </Layout>
-)
+const Home = ({ data }) => {
+  const {
+    heading1,
+    headingLinkText,
+    headingLink,
+    leadImage,
+    introText,
+    keywords,
+  } = data.file.childMarkdownRemark.frontmatter
+
+  return (
+    <Layout>
+      <SEO title="Home" keywords={keywords} />
+      <HomeContainer>
+        <IntroText>
+          <span dangerouslySetInnerHTML={{ __html: heading1 }} />
+          <HomeLink href={headingLink} target="_blank">
+            {headingLinkText}
+          </HomeLink>
+        </IntroText>
+        <HomeImage image={leadImage} />
+        <IntroText sub dangerouslySetInnerHTML={{ __html: introText }} />
+      </HomeContainer>
+    </Layout>
+  )
+}
 
 export default Home
+
+export const query = graphql`
+  {
+    file(relativePath: { eq: "home.md" }) {
+      id
+      childMarkdownRemark {
+        frontmatter {
+          heading1
+          headingLinkText
+          headingLink
+          leadImage
+          introText
+          keywords
+        }
+      }
+    }
+  }
+`

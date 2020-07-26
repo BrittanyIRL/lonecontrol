@@ -9,11 +9,21 @@ collections:
   - label: Pages
     name: pages
     files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/home.md"
+        fields:
+          - { name: heading1, label: heading1, widget: text }
+          - { name: headingLinkText, label: headingLinkText, widget: string }
+          - { name: headingLink, label: headingLink, widget: string }
+          - { name: leadImage, label: leadImage, widget: image }
+          - { name: introText, label: introText, widget: text }
+          - { name: keywords, label: keywords, widget: list }
       - label: "About Page"
         name: "about"
         file: "content/about.md"
         fields:
-          - { name: title, label: Title, widget: string }
+          - { name: title, label: title, widget: string }
           - { name: leadImage, label: leadImage, widget: image }
           - { name: leadImageAlt, label: leadImageAlt, widget: string }
           - { name: etherealLead, label: etherealLead, widget: string }
