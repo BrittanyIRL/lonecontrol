@@ -7,8 +7,6 @@ import Layout from "../components/layout"
 
 import SEO from "../components/seo"
 
-import epFrontImageColor from "../images/lc_house_color.jpg"
-
 const HomeContainer = styled.div`
   width: 100%;
   padding: auto 2rem;
@@ -63,11 +61,16 @@ const IntroText = styled.p`
 `
 
 const HomeLink = styled(OutboundLink)`
+  display: inline-block;
   font-size: 3rem;
   border-bottom: 0.15rem solid ${({ theme }) => theme.colors.RAISIN_BLACK};
   color: ${({ theme }) => theme.colors.RAISIN_BLACK};
   &:hover {
     font-style: italic;
+  }
+
+  &::after {
+    content: ".";
   }
 
   @media (max-width: 600px) {

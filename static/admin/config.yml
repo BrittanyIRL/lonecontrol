@@ -30,6 +30,7 @@ collections:
           - { name: etherealContent, label: etherealContent, widget: text }
           - { name: tangibleLead, label: tangibleLead, widget: string }
           - { name: tangibleContent, label: tangibleContent, widget: text }
+          - { name: keywords, label: keywords, widget: list }
       - label: "Shows Page"
         name: "shows"
         file: "content/shows.md"
@@ -69,3 +70,4 @@ collections:
                   { name: secondaryInfo, label: SecondaryInfo, widget: string },
                 ],
             }
+          - { name: keywords, label: keywords, widget: list }

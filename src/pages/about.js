@@ -6,7 +6,6 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
-import bandImage from "../images/pressshot2019.jpg"
 
 const AccordionButton = styled.button`
   margin-right: 2rem;
@@ -91,23 +90,6 @@ const AboutSection = styled.div`
   transition: opacity 1000ms, visibility 1000ms;
 `
 
-const SEO_ABOUT_KEYWORDS = [
-  `phoenix`,
-  `punk`,
-  `music`,
-  `chris`,
-  `gerrit`,
-  `desert drip`,
-  `new music`,
-  `unnecessary voice`,
-  `lone control`,
-  `loan control`,
-  `arizona`,
-  `rock`,
-  `indie`,
-  `band`,
-]
-
 const About = ({ data }) => {
   const {
     title,
@@ -117,12 +99,13 @@ const About = ({ data }) => {
     etherealContent,
     tangibleLead,
     tangibleContent,
+    keywords,
   } = data.file.childMarkdownRemark.frontmatter
 
   const [openEtherealSection, toggleOpenEtherealSection] = useState(true)
   return (
     <Layout>
-      <SEO title="About" keywords={SEO_ABOUT_KEYWORDS} />
+      <SEO title="About" keywords={keywords} />
       <PageHeading>{title}</PageHeading>
       <AboutImage src={leadImage} alt={leadImageAlt} />
       <AccordionControls>
@@ -170,6 +153,7 @@ export const query = graphql`
           etherealContent
           tangibleLead
           tangibleContent
+          keywords
         }
       }
     }
