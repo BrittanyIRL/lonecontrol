@@ -28,4 +28,20 @@ tangibleContent: >-
   <p>Older than they once were but not yet beyond the pale, Lone Control represents a knowing outburst – a cry, not for help or attention, but to rally any who might find need. Their creations are crude and abrasive by design. Rarely in this age of immediacy do they find meaningful value in the overwrought.</p>
 
   <p>Lone Control’s debut is a flash in the pan, arresting, burning bright while waning focus may last. Four hints at a larger question, too large to answer now. That moment will come in time. For now, there is only this. Here. There. Gone.</p>
+keywords:
+  - phoenix
+  - punk
+  - music
+  - chris trian
+  - gerrit feenstra
+  - desert drip
+  - new music
+  - unnecessary voice
+  - lone control
+  - loan control
+  - arizona
+  - rock
+  - indie
+  - band
+  - ""
 ---
