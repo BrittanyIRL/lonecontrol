@@ -9,6 +9,17 @@ collections:
   - label: Pages
     name: pages
     files:
+      - label: "About Page"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: leadImage, label: leadImage, widget: image }
+          - { name: leadImageAlt, label: leadImageAlt, widget: string }
+          - { name: etherealLead, label: etherealLead, widget: string }
+          - { name: etherealContent, label: etherealContent, widget: markdown }
+          - { name: tangibleLead, label: tangibleLead, widget: string }
+          - { name: tangibleContent, label: tangibleContent, widget: markdown }
       - label: "Shows Page"
         name: "shows"
         file: "content/shows.md"
