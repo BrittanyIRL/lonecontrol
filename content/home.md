@@ -8,8 +8,8 @@ keywords:
   - phoenix
   - punk
   - music
-  - chris
-  - gerrit
+  - chris trian
+  - gerrit feenstra
   - desert drip
   - new music
   - unnecessary voice
