@@ -9,6 +9,15 @@ collections:
   - label: Pages
     name: pages
     files:
+      - label: "splash"
+        name: "splash"
+        file: "content/splash.md"
+        fields:
+          - { name: callToActionText, label: callToActionText, widget: string }
+          - { name: albumLink, label: albumLink, widget: string }
+          - { name: albumLinkAltText, label: albumLinkAltText, widget: string }
+          - { name: backgroundImage, label: backgroundImage, widget: image }
+          - { name: keywords, label: keywords, widget: list }
       - label: "Home Page"
         name: "home"
         file: "content/home.md"

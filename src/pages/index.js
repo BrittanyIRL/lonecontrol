@@ -1,12 +1,11 @@
 import React from "react"
 
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import GlobalLayout from "../components/global-layout"
 import SEO from "../components/seo"
-import SplashBackground from "../images/lc_house_bw.jpg"
 import LoneControlText from "../images/lc_ep_text.png"
 
 const SplashContainer = styled.div`
@@ -14,7 +13,7 @@ const SplashContainer = styled.div`
   height: 100vh;
   display: block;
   position: absolute;
-  background-image: url(${SplashBackground});
+  background-image: ${({ image }) => `url(${image})`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -77,39 +76,43 @@ const EnterSite = styled(Link)`
   }
 `
 
-const IndexPage = () => (
-  <GlobalLayout>
-    <SEO
-      title="Lone Control"
-      keywords={[
-        `phoenix`,
-        `punk`,
-        `music`,
-        `chris`,
-        `gerrit`,
-        `desert drip`,
-        `new music`,
-        `unnecessary voice`,
-        `lone control`,
-        `loan control`,
-        `arizona`,
-        `rock`,
-        `indie`,
-        `band`,
-      ]}
-    />
-    <body>
-      <SplashContainer>
-        <SplashText
-          alt="Visit Bandcamp to hear the debut EP"
-          href="https://desertdriprecords.bandcamp.com/album/lone-control"
-          aria-description="Lone Control"
-          target="_blank"
-        />
-        <EnterSite to="/home/">Enter Site</EnterSite>
-      </SplashContainer>
-    </body>
-  </GlobalLayout>
-)
+const IndexPage = ({ data }) => {
+  const {
+    callToActionText,
+    albumLink,
+    albumLinkAltText,
+    backgroundImage,
+    keywords,
+  } = data.file.childMarkdownRemark.frontmatter
+
+  return (
+    <GlobalLayout>
+      <SEO title="Lone Control" keywords={keywords} />
+      <body>
+        <SplashContainer image={backgroundImage}>
+          <SplashText alt={albumLinkAltText} href={albumLink} target="_blank" />
+          <EnterSite to="/home/">{callToActionText}</EnterSite>
+        </SplashContainer>
+      </body>
+    </GlobalLayout>
+  )
+}
 
 export default IndexPage
+
+export const query = graphql`
+  {
+    file(relativePath: { eq: "splash.md" }) {
+      id
+      childMarkdownRemark {
+        frontmatter {
+          callToActionText
+          albumLink
+          albumLinkAltText
+          backgroundImage
+          keywords
+        }
+      }
+    }
+  }
+`
