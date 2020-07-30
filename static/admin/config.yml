@@ -9,6 +9,24 @@ collections:
   - label: Pages
     name: pages
     files:
+      - label: "watch"
+        name: "watch"
+        file: "content/watch.md"
+        fields:
+          - { name: keywords, label: keywords, widget: list }
+          - { name: heading, label: heading, widget: string }
+          - {
+              label: videos,
+              name: videos,
+              widget: list,
+              fields:
+                [
+                  { name: title, label: title, widget: string },
+                  { name: release, label: release, widget: string },
+                  { name: releaseDate, label: releaseDate, widget: date },
+                  { name: iframeSrc, label: iframeSrc, widget: string },
+                ],
+            }
       - label: "releases"
         name: "releases"
         file: "content/releases.md"

@@ -1,6 +1,7 @@
 // import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import format from "date-fns/format"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
@@ -22,59 +23,57 @@ const VideoContainer = styled.div`
   }
 `
 
-const Video = () => (
-  <Layout>
-    <SEO
-      title="Watch"
-      keywords={[
-        `phoenix`,
-        `punk`,
-        `music`,
-        `chris`,
-        `gerrit`,
-        `desert drip`,
-        `new music`,
-        `unnecessary voice`,
-        `lone control`,
-        `loan control`,
-        `arizona`,
-        `rock`,
-        `indie`,
-        `band`,
-      ]}
-    />
-    <>
-      <PageHeading>Watch</PageHeading>
-      <VideoContainer>
-        <h3>My Life Is My Fault</h3>
-        <p>Album: Self Titled EP</p>
-        <p>Released: November 2019</p>
+const Video = ({ data }) => {
+  const {
+    heading,
+    keywords,
+    videos = [],
+  } = data.file.childMarkdownRemark.frontmatter
 
-        <iframe
-          width="100%"
-          scrolling="no"
-          src="https://www.youtube.com/embed/b09PS2AckSc"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        />
-      </VideoContainer>
+  return (
+    <Layout>
+      <SEO title={heading} keywords={keywords} />
+      <>
+        <PageHeading>{heading}</PageHeading>
+        {videos.map((video, index) => {
+          ;<VideoContainer key={`video_${index}`}>
+            <h3>{video.title}</h3>
+            <p>{video.release}</p>
+            <p>Released: {format(new Date(video.releaseDate), "M, yyyy")}</p>
 
-      <VideoContainer>
-        <h3>What You Deserve</h3>
-        <p>Album: Self Titled EP</p>
-        <p>Released: November 2019</p>
-        <iframe
-          width="100%"
-          scrolling="no"
-          frameborder="no"
-          src="https://www.youtube.com/embed/G25Y5sj6cyI"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </VideoContainer>
-    </>
-  </Layout>
-)
+            <iframe
+              width="100%"
+              scrolling="no"
+              src={video.iframeSrc}
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
+          </VideoContainer>
+        })}
+      </>
+    </Layout>
+  )
+}
 
 export default Video
+
+export const query = graphql`
+  {
+    file(relativePath: { eq: "watch.md" }) {
+      id
+      childMarkdownRemark {
+        frontmatter {
+          heading
+          keywords
+          videos {
+            title
+            release
+            releaseDate
+            iframeSrc
+          }
+        }
+      }
+    }
+  }
+`
