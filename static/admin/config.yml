@@ -9,6 +9,22 @@ collections:
   - label: Pages
     name: pages
     files:
+      - label: "lyrics"
+        name: "lyrics"
+        file: "content/lyrics.md"
+        fields:
+          - { name: keywords, label: keywords, widget: list }
+          - { name: heading, label: heading, widget: string }
+          - {
+              label: songs,
+              name: songs,
+              widget: list,
+              fields:
+                [
+                  { name: title, label: title, widget: string },
+                  { name: lyricText, title: lyricText, widget: text },
+                ],
+            }
       - label: "watch"
         name: "watch"
         file: "content/watch.md"

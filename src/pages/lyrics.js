@@ -13,60 +13,54 @@ const Song = styled.div`
   max-width: 50%;
   min-width: 300px;
   margin-bottom: 2rem;
-`
+  p {
+    margin-bottom: 1.5rem;
 
+    span {
+      display: block;
+    }
+  }
+`
 const SongTitle = styled.h3``
-const LyricSection = styled.p`
-  margin-bottom: 1.5rem;
-`
-const LyricLine = styled.span`
-  display: block;
-`
-const Lyrics = () => (
-  <Layout>
-    <SEO
-      title="Lyrics"
-      keywords={[
-        `phoenix`,
-        `punk`,
-        `music`,
-        `chris`,
-        `gerrit`,
-        `desert drip`,
-        `new music`,
-        `unnecessary voice`,
-        `lone control`,
-        `loan control`,
-        `arizona`,
-        `rock`,
-        `indie`,
-        `band`,
-      ]}
-    />
 
-    <PageHeading>Song Lyrics</PageHeading>
-    <SongsContainer>
-      <Song>
-        <SongTitle>Unnecessary Voice</SongTitle>
-        <LyricSection>
-          <LyricLine>I am not a necessary voice</LyricLine>
-          <LyricLine>The future is not my choice</LyricLine>
-          <LyricLine>Proverbially one of the boys</LyricLine>
-          <LyricLine>I am only adding to the noise</LyricLine>
-        </LyricSection>
+const Lyrics = ({ data }) => {
+  const { heading, keywords, songs } = data.file.childMarkdownRemark.frontmatter
 
-        <LyricSection>
-          <LyricLine>I am the status quo</LyricLine>
-          <LyricLine>I denominate the ratio</LyricLine>
-          <LyricLine>Not a martyr or a cherry bomb</LyricLine>
-          <LyricLine>I am the echo of a fading song</LyricLine>
-        </LyricSection>
+  return (
+    <Layout>
+      <SEO title={heading} keywords={keywords} />
 
-        <LyricSection>
-          <LyricLine>Listen to my silence</LyricLine>
-        </LyricSection>
-      </Song>
-      {/* <Song>
+      <PageHeading>{heading}</PageHeading>
+      <SongsContainer>
+        {SongsContainer.map((song, index) => {
+          ;<Song key={`song_${index}`}>
+            <SongTitle>{song.title}</SongTitle>/SongTitle>
+            <div dangerouslySetInnerHTML={{ __html: song.lyricText }} />
+          </Song>
+        })}
+      </SongsContainer>
+    </Layout>
+    // <Song>
+    //   <SongTitle>Unnecessary Voice</SongTitle>
+    //   <p>
+    //     <span>I am not a necessary voice</span>
+    //     <span>The future is not my choice</span>
+    //     <span>Proverbially one of the boys</span>
+    //     <span>I am only adding to the noise</span>
+    //   </p>
+
+    //   <p>
+    //     <span>I am the status quo</span>
+    //     <span>I denominate the ratio</span>
+    //     <span>Not a martyr or a cherry bomb</span>
+    //     <span>I am the echo of a fading song</span>
+    //   </p>
+
+    //   <p>
+    //     <span>Listen to my silence</span>
+    //   </p>
+    // </Song>
+    /* <Song>
         <SongTitle>My Life is My Fault</SongTitle>
         <LyricSection>
           <LyricLine>Don't call it a sickness</LyricLine>
@@ -95,9 +89,26 @@ const Lyrics = () => (
         <LyricSection>
           <LyricLine>My life is my fault</LyricLine>
         </LyricSection>
-      </Song> */}
-    </SongsContainer>
-  </Layout>
-)
+      </Song> */
+  )
+}
 
 export default Lyrics
+
+export const query = graphql`
+  {
+    file(relativePath: { eq: "lyrics.md" }) {
+      id
+      childMarkdownRemark {
+        frontmatter {
+          keywords
+          heading
+          songs {
+            title
+            lyricText
+          }
+        }
+      }
+    }
+  }
+`

@@ -36,20 +36,24 @@ const Video = ({ data }) => {
       <>
         <PageHeading>{heading}</PageHeading>
         {videos.map((video, index) => {
-          ;<VideoContainer key={`video_${index}`}>
-            <h3>{video.title}</h3>
-            <p>{video.release}</p>
-            <p>Released: {format(new Date(video.releaseDate), "M, yyyy")}</p>
+          return (
+            <VideoContainer key={`video_${index}`}>
+              <h3>{video.title}</h3>
+              <p>{video.release}</p>
+              <p>
+                Released: {format(new Date(video.releaseDate), "MMMM yyyy")}
+              </p>
 
-            <iframe
-              width="100%"
-              scrolling="no"
-              src={video.iframeSrc}
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            />
-          </VideoContainer>
+              <iframe
+                width="100%"
+                scrolling="no"
+                src={video.iframeSrc}
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              />
+            </VideoContainer>
+          )
         })}
       </>
     </Layout>
