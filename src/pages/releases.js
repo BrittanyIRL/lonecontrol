@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
 
-import epFrontImage from "../images/lc_ep_front.jpg"
 const ReleasesContainer = styled.div`
   width: 60rem;
   max-width: 60vw;
