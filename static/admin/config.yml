@@ -9,6 +9,116 @@ collections:
   - label: Pages
     name: pages
     files:
+      - label: "lyrics"
+        name: "lyrics"
+        file: "content/lyrics.md"
+        fields:
+          - { name: keywords, label: keywords, widget: list }
+          - { name: heading, label: heading, widget: string }
+          - {
+              label: songs,
+              name: songs,
+              widget: list,
+              fields:
+                [
+                  { name: title, label: title, widget: string },
+                  { name: lyricText, title: lyricText, widget: text },
+                ],
+            }
+      - label: "watch"
+        name: "watch"
+        file: "content/watch.md"
+        fields:
+          - { name: keywords, label: keywords, widget: list }
+          - { name: heading, label: heading, widget: string }
+          - {
+              label: videos,
+              name: videos,
+              widget: list,
+              fields:
+                [
+                  { name: title, label: title, widget: string },
+                  { name: release, label: release, widget: string },
+                  { name: releaseDate, label: releaseDate, widget: date },
+                  { name: iframeSrc, label: iframeSrc, widget: string },
+                ],
+            }
+      - label: "releases"
+        name: "releases"
+        file: "content/releases.md"
+        fields:
+          - { name: keywords, label: keywords, widget: list }
+          - { name: heading, label: heading, widget: string }
+          - {
+              label: releases,
+              name: releases,
+              widget: list,
+              fields:
+                [
+                  { name: title, label: title, widget: string },
+                  { name: art, label: albumArt, widget: image },
+                  { name: artAlt, label: albumArtAlt, widget: string },
+                  { name: releaseText, label: releaseText, widget: string },
+                  { name: listenText, label: listenText, widget: text },
+                ],
+            }
+      - label: "listen"
+        name: "listen"
+        file: "content/listen.md"
+        fields:
+          - { name: keywords, label: keywords, widget: list }
+          - { name: heading, label: heading, widget: string }
+          - {
+              label: promoFocus,
+              name: promoFocus,
+              widget: list,
+              fields:
+                [
+                  { name: track, label: track, widget: string },
+                  {
+                    name: soundcloudIframeSource,
+                    label: soundcloudIframeSource,
+                    widget: string,
+                  },
+                  {
+                    name: soundcloudLink,
+                    label: soundcloudLink,
+                    widget: string,
+                  },
+                  { name: linkText, label: linkText, widget: string },
+                ],
+            }
+      - label: "splash"
+        name: "splash"
+        file: "content/splash.md"
+        fields:
+          - { name: callToActionText, label: callToActionText, widget: string }
+          - { name: albumLink, label: albumLink, widget: string }
+          - { name: albumLinkAltText, label: albumLinkAltText, widget: string }
+          - { name: backgroundImage, label: backgroundImage, widget: image }
+          - { name: keywords, label: keywords, widget: list }
+      - label: "Home Page"
+        name: "home"
+        file: "content/home.md"
+        fields:
+          - { name: heading1, label: heading1, widget: text }
+          - { name: headingLinkText, label: headingLinkText, widget: string }
+          - { name: headingLink, label: headingLink, widget: string }
+          - { name: leadImage, label: leadImage, widget: image }
+          - { name: introText, label: introText, widget: text }
+          - { name: keywords, label: keywords, widget: list }
+      - label: "About Page"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { name: title, label: title, widget: string }
+          - { name: leadImage, label: leadImage, widget: image }
+          - { name: leadImageAlt, label: leadImageAlt, widget: string }
+          - { name: etherealLead, label: etherealLead, widget: string }
+          - { name: etherealContent, label: etherealContent, widget: text }
+          - { name: tangibleLead, label: tangibleLead, widget: string }
+          - { name: tangibleContent, label: tangibleContent, widget: text }
+          - { name: keywords, label: keywords, widget: list }
       - label: "Shows Page"
         name: "shows"
         file: "content/shows.md"
@@ -48,3 +158,4 @@ collections:
                   { name: secondaryInfo, label: SecondaryInfo, widget: string },
                 ],
             }
+          - { name: keywords, label: keywords, widget: list }

@@ -1,11 +1,11 @@
 // import PropTypes from "prop-types"
 import React from "react"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
 
-import epFrontImage from "../images/lc_ep_front.jpg"
 const ReleasesContainer = styled.div`
   width: 60rem;
   max-width: 60vw;
@@ -25,49 +25,49 @@ const AlbumImage = styled.img`
   width: 40rem;
 `
 
-const Releases = () => (
-  <Layout>
-    <SEO
-      title="Releases"
-      keywords={[
-        `phoenix`,
-        `punk`,
-        `music`,
-        `chris`,
-        `gerrit`,
-        `desert drip`,
-        `new music`,
-        `unnecessary voice`,
-        `lone control`,
-        `loan control`,
-        `arizona`,
-        `rock`,
-        `indie`,
-        `band`,
-      ]}
-    />
-    <PageHeading>Physical Releases</PageHeading>
-    <ReleasesContainer>
-      <h3>
-        Lone Control <em>s/t</em>
-      </h3>
-      <AlbumImage
-        src={epFrontImage}
-        alt="Self-Titled Album Cover for Lone Control"
-      />
-      <p>Released Nov 2019 on Desert Drip Records.</p>
-      <p>
-        Listen, download digital, or order the vinyl on{" "}
-        <a
-          href="https://desertdriprecords.bandcamp.com/album/lone-control"
-          title="lone control band camp"
-        >
-          Bandcamp
-        </a>
-        .
-      </p>
-    </ReleasesContainer>
-  </Layout>
-)
+const Releases = ({ data }) => {
+  const {
+    keywords,
+    heading,
+    releases,
+  } = data.file.childMarkdownRemark.frontmatter
+
+  return (
+    <Layout>
+      <SEO title="Releases" keywords={keywords} />
+      <PageHeading>{heading}</PageHeading>
+
+      {releases.map((release) => (
+        <ReleasesContainer>
+          <h3 dangerouslySetInnerHTML={{ __html: release.title }} />
+          <AlbumImage src={release.art} alt={release.artAlt} />
+          <p dangerouslySetInnerHTML={{ __html: release.releaseText }} />
+          <p dangerouslySetInnerHTML={{ __html: release.listenText }} />
+        </ReleasesContainer>
+      ))}
+    </Layout>
+  )
+}
 
 export default Releases
+
+export const query = graphql`
+  {
+    file(relativePath: { eq: "releases.md" }) {
+      id
+      childMarkdownRemark {
+        frontmatter {
+          keywords
+          heading
+          releases {
+            title
+            art
+            artAlt
+            releaseText
+            listenText
+          }
+        }
+      }
+    }
+  }
+`

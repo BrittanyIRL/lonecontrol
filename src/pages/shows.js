@@ -13,23 +13,6 @@ import SEO from "../components/seo"
 import PageHeading from "../components/headings/page-heading"
 import HorizontalLine from "../components/accents/horizontal-line"
 
-const SEO_KEYWORDS_ARRAY = [
-  `phoenix`,
-  `punk`,
-  `music`,
-  `chris`,
-  `gerrit`,
-  `desert drip`,
-  `new music`,
-  `unnecessary voice`,
-  `lone control`,
-  `loan control`,
-  `arizona`,
-  `rock`,
-  `indie`,
-  `band`,
-]
-
 const Container = styled.div`
   width: 60rem;
   max-width: 60vw;
@@ -79,15 +62,15 @@ const Image = styled.img`
 `
 
 export const ShowsWrapper = ({ data }) => {
-  const { title = "Shows", main, contact, upcomingShows } = data
+  const { title = "Shows", main, contact, upcomingShows, keywords } = data
 
-  const upcomingShowList = data.upcomingShows
+  const upcomingShowList = upcomingShows
     .filter((show) => isAfter(new Date(show.date), endOfYesterday()))
     .sort((showA, showB) => showA.date < showB.date)
 
   return (
     <Layout>
-      <SEO title="Tour" keywords={SEO_KEYWORDS_ARRAY} />
+      <SEO title="Tour" keywords={keywords} />
       <PageHeading>{title}</PageHeading>
       <Container>
         <p>{main}</p>
@@ -156,9 +139,12 @@ const Shows = ({ data }) => {
     main,
     contact,
     upcomingShows,
+    keywords,
   } = data.file.childMarkdownRemark.frontmatter
 
-  return <ShowsWrapper data={{ title, main, contact, upcomingShows }} />
+  return (
+    <ShowsWrapper data={{ title, main, contact, upcomingShows, keywords }} />
+  )
 }
 
 export default Shows
@@ -183,6 +169,7 @@ export const query = graphql`
           title
           main
           contact
+          keywords
         }
       }
     }
