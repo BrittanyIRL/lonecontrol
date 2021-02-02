@@ -25,4 +25,8 @@ videos:
     title: What You Deserve
     release: "Album: Self Titled EP"
     iframeSrc: https://www.youtube.com/embed/G25Y5sj6cyI
+  - releaseDate: 2021-02-02T22:14:22.118Z
+    title: Fascination Street
+    release: "Album: Fed to the Void (Covers EP)"
+    iframeSrc: https://www.youtube.com/watch?v=nQAF8WrRG0o
 ---
